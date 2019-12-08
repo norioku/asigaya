@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
 #topページ
-root "homes#index"
+  root "homes#index"
 
+#user devise
+      devise_for :users
 # users
       get "users/:id" => "users#show", as: "user"
       get "users/:id/edit" => "users#edit",as: "users_edit"
@@ -12,12 +14,6 @@ root "homes#index"
       delete "users/:id/destroy" => "users#destroy",as: "destroy_user"
       get "users/close" => "users#complete"
 
-#user devise
-      devise_for :end_users, controllers: {
-      sessions:      'users/sessions',
-      passwords:     'users/passwords',
-      registrations: 'users/registrations'
-    }
 
 #user devise_def
   #get 'users/index'
@@ -30,8 +26,11 @@ root "homes#index"
 
 
 #inquiries
-	  get "user/:id/inquiries/new" => "user_inquiries#new", as: "new_user_inquiries"
-      post "user/:id/inquiries" => "user_inquiries#create", as: "user_inquiries"
-	  get "user/:id/inquiries/complete" => "user_inquiries#complete", as: "user_inquiries_complete"
+	  get "user/:id/inquiries/new" => "inquiries#new", as: "new_user_inquiry"
+    post "user/:id/inquiries" => "inquiries#create", as: "user_inquiries"
+	  get "user/:id/inquiries/complete" => "inquiries#complete", as: "user_inquiries_complete"
+	  
+#location_information
+    get "location_informations" => "location_informations#index"
 
 end

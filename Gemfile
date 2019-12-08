@@ -67,3 +67,22 @@ group :production do
   gem 'mysql2'
 end
 
+gem 'kaminari', '~> 0.17.0'
+
+gem 'bootstrap-sass', '~> 3.4.1'
+
+gem 'jquery-rails'
+
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+
+gem "refile-mini_magick"
+
+gem 'bootstrap-select-rails'
+
+gem 'rails-i18n'
+
+gem 'jquery-turbolinks'
+
+gem 'enumerize'
+
+gem 'font-awesome-sass', '~> 5.4.1'

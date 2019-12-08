@@ -1,0 +1,54 @@
+<header>
+  <h1 class = "logo">
+    <%= link_to root_path, class: "logo-link" do %>
+      ロゴ
+    <% end %>
+  </h1>
+  
+  <nav>
+    <% if user_signed_in? %>
+      <ul class = "nav-list">
+        <% unless current_page?(user_path(current_user)) %>
+          <li class = "nav-item">
+            <%= link_to user_path(current_user), class: "nav-link" do %>
+              マイページ
+            <% end %>
+          </li>
+        <% end %>
+        
+          <li class = "nav-item">
+            <%= link_to destroy_user_session_path, method: :delete, class: "nav-link", data: { confirm: "ログアウトしますか？"} do %>
+              ログアウト
+            <% end %>
+          </li>
+          
+        <% unless current_page?(new_user_inquiry_path(current_user)) %>
+          <li class = "nav-item">
+            <%= link_to new_user_inquiry_path(current_user), class: "nav-link" do %>
+              お問い合わせ
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      
+        <% else %>
+        
+      <ul class = "nav-list">
+        <% unless current_page?(new_user_registration_path) %>
+          <li class = "nav-item">
+            <%= link_to new_user_registration_path, class: "nav-link" do %>
+              新規登録
+            <% end %>
+          </li>
+        <% end %>
+        <% unless current_page?(new_user_session_path) %>
+          <li class = "nav-item">
+            <%= link_to new_user_session_path, class: "nav-link" do %>
+              ログイン
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </nav>
+</header>

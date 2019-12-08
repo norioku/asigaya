@@ -1,0 +1,55 @@
+<footer>
+      <h1 class = "footer-logo">
+    <%= link_to root_path, class: "footer-logo-link" do %>
+      ロゴ
+    <% end %>
+  </h1>
+  
+  <nav>
+    <% if user_signed_in? %>
+      <ul class = "footer-nav-list">
+        <% unless current_page?(user_path(current_user)) %>
+          <li class = "footer-nav-item">
+            <%= link_to user_path(current_user), class: "footer-nav-link" do %>
+              マイページ
+            <% end %>
+          </li>
+        <% end %>
+        
+          <li class = "footer-nav-item">
+            <%= link_to destroy_user_session_path, method: :delete, class: "footer-nav-link", data: { confirm: "ログアウトしますか？"} do %>
+              ログアウト
+            <% end %>
+          </li>
+          
+        <% unless current_page?(new_user_inquiry_path(current_user)) %>
+          <li class = "footer-nav-item">
+            <%= link_to new_user_inquiry_path(current_user), class: "footer-nav-link" do %>
+              お問い合わせ
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      
+        <% else %>
+        
+      <ul class = "footer-nav-list">
+        <% unless current_page?(new_user_registration_path) %>
+          <li class = "footer-nav-item">
+            <%= link_to new_user_registration_path, class: "footer-nav-link" do %>
+              新規登録
+            <% end %>
+          </li>
+        <% end %>
+        <% unless current_page?(new_user_session_path) %>
+          <li class = "footer-nav-item">
+            <%= link_to new_user_session_path, class: "footer-nav-link" do %>
+              ログイン
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </nav>
+  <p class = "footer-text">©DMM WEBCAMP</p>
+</footer>
