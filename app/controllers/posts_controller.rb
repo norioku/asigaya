@@ -1,10 +1,16 @@
 class PostsController < ApplicationController
 	def index
-		@posts =Post.all
+		@posts = if params[:tag].present?
+				    Post.tagged_with(params[:tag])
+		         else
+		         	Post.all
+		         end
+		@users = User.all
 	end
 
 	def show
 		@post = Post.find(params[:id])
+		@user = @post.user
 	end
 
 	def new

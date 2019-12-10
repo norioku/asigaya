@@ -1,5 +1,5 @@
 <div class = "user-show">
-	
+
 <p><%= attachment_image_tag @user, :image, :fill, 60, 60, fallback: "no-image.png", size:'100x100' %></p>
 <p><%= @user.name %></p><br>
 <p><%= @user.profile %></p><br>
@@ -7,7 +7,6 @@
 <%= link_to "いいねした投稿", favorite_path, class: 'btn btn-default' %>
 
 <%= link_to "プロフィール編集", user_edit_path, class: 'btn btn-default' %>
-	
 </div>
 
 <h2>投稿一覧</h2>
