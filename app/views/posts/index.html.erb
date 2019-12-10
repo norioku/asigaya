@@ -1,1 +1,18 @@
-<h1>投稿一覧ページ</h1>
+<div class="post-index">
+<h2>阿佐ヶ谷広場</h2>
+
+
+<%= link_to "新しい投稿がしたい！", post_new_path,  class: 'btn btn-default' %>
+	<div class="flex">
+		<% @posts.each do |post| %>
+			<%= attachment_image_tag post, :image, :fill, 60, 60, fallback: "no-image.png", size:'100x100' %>
+			<h5><%= post.title %><br></h5>
+			<h5><%= post.content %><br></h5>
+			<h5><%= post.address %><br></h5>
+							
+			<%= link_to "詳細を見る", post_show_path(post.id),  class: 'btn btn-default' %>
+			
+		<% end %>
+	</div>
+	
+</div>

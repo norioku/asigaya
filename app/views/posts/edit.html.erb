@@ -1,1 +1,26 @@
-<h1>投稿編集ページ</h1>
+<div class="post-edit">
+
+    <%= form_for(@post, url: post_update_path) do |f| %>
+
+        <h4>タイトル</h4>
+        <%= f.text_field :title %>
+
+        <h4>本文</h4>
+        <%= f.text_field :content %>
+
+        <h4>場所</h4>
+        <%= f.text_field :address %></br>
+    
+        <h4>写真</h4>
+        <%= f.attachment_field :image %>
+
+        <div class='field'>
+            <%= f.label :tag_list %>
+            <%= f.text_field :tag_list %>
+        </div>
+
+        <%= f.submit '編集内容を更新する',class: "btn btn-default" %>
+    
+    <% end %>
+
+</div>

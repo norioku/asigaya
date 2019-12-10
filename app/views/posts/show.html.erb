@@ -1,1 +1,20 @@
-<h1>投稿詳細ページ</h1>
+<div class="post-show">
+
+    <h1>投稿詳細ページ</h1>
+
+    <p>tags: <%= raw(@post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
+
+    <p><%= attachment_image_tag @post, :image, :fill, 60, 60, fallback: "no-image.png", size:'100x100' %></p>
+
+    <p><%= @post.title %></p><br>
+
+    <p><%= @post.address %></p><br>
+
+    <%= link_to "投稿を編集", post_edit_path, class: 'btn btn-default' %>
+    
+    <%= link_to "投稿を投稿を削除", destroy_post_path, class: 'btn btn-default' %>
+    
+    <%= link_to "広場に戻る", posts_path, class: 'btn btn-default' %>
+
+
+</div>

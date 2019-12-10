@@ -1,5 +1,5 @@
 class Favolite < ApplicationRecord
     
-    belongs_to :users, dependent: :destroy
-    belongs_to :posts, dependent: :destroy
+    belongs_to :user, dependent: :destroy
+    belongs_to :post, dependent: :destroy
 end
