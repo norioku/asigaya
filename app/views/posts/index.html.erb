@@ -1,1 +1,68 @@
-<h1>投稿一覧ページ</h1>
+<div class="container">
+<div class="post-index">
+	<div class="row">
+	<p class="col-xs-5 post-index-head">阿佐ヶ谷広場</p>
+
+
+	<div class="col-xs-4 col-xs-offset-3">
+		
+            <div class="post-show-newlink">新しい投稿がしたい！
+                <%= link_to post_new_path do %>
+                    <i class="fas fa-chevron-circle-right fa-second"></i>
+                <% end %>
+            </div>
+        </div>
+
+	</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-9">
+	<% @posts.each do |post| %>
+	  <div class="row post-index-each">
+		
+			<div class="col-lg-3 col-xs-offset-1 post-index-user-image">
+				<%= attachment_image_tag post, :image, :fill, 200, 200, fallback: "no-image.png", size:'170x200' %>
+			</div>
+			
+			
+				<div class="col-lg-1 post-index-user">
+					<div class="post-index-name">
+						<p><%= post.user.name %>さん</p>
+					</div>
+					<%= attachment_image_tag post.user, :image, :fill, 60, 60, fallback: "no-image.png", size:'60x60' %>
+				</div>
+				
+				<div class="col-lg-5">
+					<h2 class="post-index-title"><%= post.title %></h2>
+					<p class="post-index-address"><%= post.address %></p>
+					<% tags = post.tag_list %>
+						<% tags.each do |tag| %>
+							<%= link_to tag_path(tag) do %>
+								<button class="btn btn-default btn-sm"><%= tag %></button>
+							<% end %>
+						<% end %>
+					<p class="post-index-content"><%= post.content.truncate(25) %></p>
+					
+					<h1>
+					<%= link_to post_show_path(post.id) do %>
+            		<i class="fas fa-chevron-circle-right fa-second"></i>
+        			<% end %>
+        			</h1>
+					<%= render 'favorites/favorite', post: post %>  
+				</div>
+			</div>	
+	<% end %>
+
+	</div>
+	<div class="col-lg-3 tag-list">
+		<span class="tag-list-head">タグで検索</span>
+		<% @tags.each do |tag| %>
+			<%= link_to tag_path(tag.name) do %>
+				<button class="btn btn-default btn-sm tags"><%= tag %></button>
+  			<% end %>
+		<% end %>
+	</div>
+							
+</div>
+</div>

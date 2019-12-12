@@ -86,3 +86,5 @@ gem 'jquery-turbolinks'
 gem 'enumerize'
 
 gem 'font-awesome-sass', '~> 5.4.1'
+
+gem 'acts-as-taggable-on', '~> 6.0'

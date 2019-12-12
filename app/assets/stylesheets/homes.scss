@@ -8,12 +8,12 @@
   writing-mode: vertical-rl;
   text-orientation: upright;
   color:white;
-  font-weight: 300;
+  font-weight: 500;
   text-align:right;
   float:right;
   font-size:45px;
   letter-spacing:30px;
-  margin-right: 20px;
+  margin: 35px 40px 0 0;
 }
 
 .title-second{
@@ -25,7 +25,7 @@
   float: right;
   font-size:40px;
   letter-spacing:25px;
-  margin: 35px 20px 0 0;
+  margin: 35px 40px 0 0;
 }
 
 .title-third{
@@ -37,7 +37,7 @@
   float: right;
   font-size:40px;
   letter-spacing:25px;
-  margin: 35px 20px 0 0;
+  margin: 35px 40px 0 0;
 }
 
 .home-about{
@@ -66,7 +66,6 @@
     background-image:url(top5.jpg);
     width:50%;
     height:650px;
-    margin-bottom: 40px;
     background-size: cover;
     float:left;
 }
@@ -75,7 +74,6 @@
     background-image:url(top4.jpg);
     width:50%;
     height:650px;
-    margin-bottom: 40px;
     background-size: cover;
     float:right;
 }
@@ -88,7 +86,7 @@
   float:right;
   font-size:22px;
   font-weight: 200;
-  margin: 280px 30px 0 0;
+  margin: 300px 30px 0 0;
   line-height: 2em;
   text-decoration: none;
 }
@@ -127,6 +125,6 @@
   color:black;
 }
 
-// .fa-third {
-//   color:white;
-// }
+ .fa-third {
+   color:white;
+ }

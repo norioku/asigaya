@@ -4,10 +4,16 @@ Rails.application.routes.draw do
   root "homes#index"
 
 #user devise
-      devise_for :users
+      devise_for :users, controllers: {
+      sessions:      'users/sessions',
+      passwords:     'users/passwords',
+      registrations: 'users/registrations'
+      
+}
+
 # users
       get "users/:id" => "users#show", as: "user"
-      get "users/:id/edit" => "users#edit",as: "users_edit"
+      get "users/:id/edit" => "users#edit",as: "user_edit"
       patch "users/:id" => "users#update",as:"user_update"
       put "users/:id" => "users#update"
       get "users/:id/close" => "users#close",as: "user_close"
@@ -22,7 +28,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 #post
- 	 resources :posts
+ 	  get "posts" => "posts#index", as: "posts"
+      get "posts/new" => "posts#new",as: "post_new"
+      get "posts/:id" => "posts#show",as:"post_show"
+      get "posts/:id/edit" => "posts#edit",as:"post_edit"
+      post "posts" => "posts#create",as:"post_create"
+      patch "posts/:id" => "posts#update",as: "post_update"
+      put "users/close" => "users#complete"
+      delete "posts/:id" => "posts#destroy",as: "destroy_post"
 
 
 #inquiries
@@ -32,5 +45,15 @@ Rails.application.routes.draw do
 	  
 #location_information
     get "location_informations" => "location_informations#index"
+    
+#favorite
+    get "users/:id/favorite" => "favorite#index", as: "favorite_index"
+    post   '/favorite/:post_id' => 'favorites#favorite', as: 'favorite'
+    delete '/favorite/:post_id' => 'favorites#unfavorite', as: 'unfavorite'
+    
+#tag
+    get 'tags/:tag', to: 'posts#index', as: :tag
+    
+
 
 end

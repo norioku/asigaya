@@ -1,6 +1,14 @@
 class Post < ApplicationRecord
     
-    belongs_to :tags, dependent: :destroy
-    belongs_to :users, dependent: :destroy
-    has_many :images, dependent: :destroy
+    acts_as_taggable
+    acts_as_ordered_taggable_on :tags
+    
+    belongs_to :user
+    has_many :favorites, dependent: :destroy
+    has_many :favoriting_users, through: :favorites, source: :user
+    
+    
+    attachment :image
+   
 end
+

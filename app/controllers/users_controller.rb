@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -10,6 +10,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      flash.now[:danger] = "ユーザ情報を更新できませんでした。"
+      render :edit
+    end
   end
 
   def destroy
@@ -29,7 +35,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :name)
+    params.require(:user).permit(:email, :name, :image, :profire )
   end
   
 end

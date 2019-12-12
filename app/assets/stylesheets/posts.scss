@@ -1,3 +1,137 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-index {
+    margin-top: 30px;
+}
+
+.post-index-flex {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.post-index-each {
+    margin: 50px 0 50px 0;
+}
+
+.post-index-user {
+    margin: 0 45px 0 60px;
+    
+}
+
+.post-index-head {
+    letter-spacing:10px;
+    font-size:35px;
+    padding: 3px 5px;
+    border-left: solid 5px #00F9A9	
+}
+
+.post-index-name {
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+.post-index-title {
+    margin-top: 0px;
+    letter-spacing:5px;
+    background: linear-gradient(transparent 70%, #B1F9D0 70%);
+}
+
+.post-index-content {
+   margin-top:10px;
+}
+
+.post-show-name {
+    display: inline-block;
+}
+
+.post-show-tag {
+    display: inline-block;
+}
+
+.flexcontainer {
+  display: flex;
+}
+
+.show-post-name {
+    margin: 5px 25px 0 25px;
+    font-size: 35px;
+}
+
+.show-post-tag {
+    margin-top: 20px;
+}
+
+.post-show-image {
+    margin: 50px 0 50px 0;
+}
+
+.show-post-title {
+    font-size: 35px;
+    border-bottom: double 5px #93FFAB;
+}
+
+.show-post-content {
+    font-size: 20px;
+    margin: 22px 0 100px 5px;
+}
+
+.post-show-return {
+    margin-top: 40px;
+    font-size: 26px;
+}
+
+.post-show-link {
+    margin: 0 15px 50px 15px;
+}
+
+.btn-success {
+    margin: 0 5px 0 1px;
+}
+
+#map {
+    width: 500px;
+    height: 370px;
+}
+    
+.post-map {
+    margin: 50px 0 0 30px;
+}
+
+.post-show-image-map {
+    margin-top: 40px;
+}
+
+.tag-list {
+    position: relative;
+    margin-top: 50px;
+    padding: 15px 15px 15px 15px;
+    border: solid 2px;
+    border-radius: 8px;
+}
+
+.tag-list-head {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 22px;
+    background: #FFF;
+}
+
+.tags {
+    margin: 5px 5px 5px 0;
+}
+
+.post-show-newlink {
+    font-size :25px;
+    margin-left: 30px;
+}
