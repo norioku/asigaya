@@ -8,8 +8,12 @@ class User < ApplicationRecord
   validates :email,          presence: true
   validates :profile,        length: { maximum: 200 }
 
+  # has_many :favorites, dependent: :destroy
+  has_many :posts
   has_many :favorites, dependent: :destroy
-  has_many :posts, dependent: :destroy
+  has_many :favorite_posts, through: :favorites, source: :post
   
   attachment :image
 end
+
+

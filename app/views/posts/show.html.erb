@@ -1,24 +1,76 @@
-<div class="post-show">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-1">
 
-    <h1>投稿詳細ページ</h1>
+            <div class="flexcontainer">
+                <div class="post-show-userimage">
+                    <%= attachment_image_tag @user, :image, :fill, 70, 70, fallback: "no-image.png", size:'70x70' %>
+                </div>
+                <h3 class="show-post-name">
+                    <%= @user.name %>
+                </h3>
+        
+                <% tags = @post.tag_list %>
+		        <% tags.each do |tag| %>
+                    <%= link_to tag_path(tag) do %>
+			            <div class="show-post-tag">
+			        	    <button class="btn btn-success show-post-tag"><%= tag %></button>
+			            </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+        
+        <div class="col-xs-3">
+            <div class="post-show-return">広場へ戻る
+                <%= link_to posts_path do %>
+                    <i class="fas fa-chevron-circle-right fa-second"></i>
+                <% end %>
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+            <div class="flexcontainer">
+            <div class="post-show-image">
+                <%= attachment_image_tag @post, :image, :fill, 500, 400, fallback: "no-image.png", size:'400x370' %>
+            </div>
+            
+            <!--googlemap API-->
+            <div class="post-map">
+                <div id='map'></div>
+                    <script>
+                        function initMap(){
+                        let map = new google.maps.Map(document.getElementById('map'), {
+                            center: {lat: -34.397, lng: 150.644},
+                            zoom: 8
+                            });
+                        }
+                    </script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK39Tyi_S53HaiDfjFdjEfHvGcQ4ACWs&callback=initMap" async defer></script>
+            </div>
+            <!--googlemap API-->
+        </div>
+            
 
-    <p><%= @user.name %></p>
-    <p><%= attachment_image_tag @user, :image, :fill, 60, 60, fallback: "no-image.png", size:'100x100' %></p>
-    
-    <p>tags: <%= raw(@post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
+            <h2 class="show-post-title">
+                <%= @post.title %>
+            </h2>
+            
+            <div class="show-post-content">
+                <%= simple_format(@post.content) %>
+            </div>
 
-    <p><%= attachment_image_tag @post, :image, :fill, 60, 60, fallback: "no-image.png", size:'100x100' %></p>
-
-    <p><%= @post.title %></p><br>
-
-    <p><%= @post.address %></p><br>
-
-    <%= link_to "投稿を編集", post_edit_path, class: 'btn btn-default' %>
-    
-    <%= link_to "投稿を投稿を削除", destroy_post_path, class: 'btn btn-default' %>
-    
-    <%= link_to "広場に戻る", posts_path, class: 'btn btn-default' %>
-
-
+            <div class="flexcontainer">
+                <div class="post-show-link">
+                    <%= link_to "投稿を編集", post_edit_path, class: 'btn btn-default' %>
+                </div>
+            
+                <div class="post-show-link">
+                    <%= link_to "投稿を削除する", destroy_post_path, method: :delete, class: 'btn btn-default' %>                    
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

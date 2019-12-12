@@ -5,7 +5,8 @@ class PostsController < ApplicationController
 		         else
 		         	Post.all
 		         end
-		@users = User.all
+		@users = User.all    
+		@tags = ActsAsTaggableOn::Tag.includes(:taggings).where("taggings_count > 0")
 	end
 
 	def show
@@ -51,7 +52,7 @@ class PostsController < ApplicationController
 			flash[:notice] = "投稿が削除されました"
 			redirect_to posts_path
 		else
-			render action: :show
+			render action: :edit
 		end
    end
 
@@ -69,7 +70,7 @@ class PostsController < ApplicationController
 	end
 	
 	def tag_params
-		params.require(:tag).permit(:tag)
+		params.require(:tag).permit(:tag, :name)
 	end
 	
 	# def image_params

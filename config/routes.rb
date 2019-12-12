@@ -47,9 +47,13 @@ Rails.application.routes.draw do
     get "location_informations" => "location_informations#index"
     
 #favorite
-    get "users/:id/favorite" => "favorite#index", as: "favorite"
+    get "users/:id/favorite" => "favorite#index", as: "favorite_index"
+    post   '/favorite/:post_id' => 'favorites#favorite', as: 'favorite'
+    delete '/favorite/:post_id' => 'favorites#unfavorite', as: 'unfavorite'
     
 #tag
     get 'tags/:tag', to: 'posts#index', as: :tag
+    
+
 
 end
