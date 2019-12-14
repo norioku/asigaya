@@ -131,7 +131,29 @@
     margin: 5px 5px 5px 0;
 }
 
+.index-post-tag {
+    margin-top: 5px;
+}
+
 .post-show-newlink {
     font-size :25px;
     margin-left: 30px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+#target {
+    height: 370px;
+    width: 500px;
+    margin: 50px 0 0 30px;
+}
+
+.btn-default {
+  background-color: black;
+}
+
+#index-post-tag {
+    margin-bottom: 50px;
 }
