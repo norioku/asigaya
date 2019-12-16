@@ -46,6 +46,7 @@ Rails.application.routes.draw do
 #location_information
     get "location_informations" => "location_informations#index"
     
+    
 #favorite
     get "users/:id/favorite" => "favorite#index", as: "favorite_index"
     post   '/favorite/:post_id' => 'favorites#favorite', as: 'favorite'
