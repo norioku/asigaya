@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
 #post
  	  get "posts" => "posts#index", as: "posts"
+ 	  get "posts/favorite" => "posts#favorite", as:"posts_favorite"
       get "posts/new" => "posts#new",as: "post_new"
       get "posts/:id" => "posts#show",as:"post_show"
       get "posts/:id/edit" => "posts#edit",as:"post_edit"
