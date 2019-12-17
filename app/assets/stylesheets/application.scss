@@ -35,7 +35,7 @@
   color: black;
 }
 
-.logo {
+.logo-head {
   width: 60px;
   height: 60px;
   margin: 0;
@@ -219,4 +219,25 @@ footer {
 a {
     color: #333333;
     text-decoration: none;
+}
+
+.logo-top {
+  background-image:url(logo.top.png);
+    width: 80px;
+    height: 92px;
+    background-size: cover;
+    margin: 15px 0 0 15px;
+}
+
+.logo {
+  background-image:url(logo.png);
+    width: 80px;
+    height: 92px;
+    background-size: cover;
+    margin: 0 0 0 15px;
+}
+
+ul, ol {
+    margin: 20px 0 10px 5px;
+    margin-bottom: 10px;
 }

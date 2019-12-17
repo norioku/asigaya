@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
 # users
       get "users/:id" => "users#show", as: "user"
+      get "users/:id/favorite" => "users#favorite", as: "user_favorite"
       get "users/:id/edit" => "users#edit",as: "user_edit"
       patch "users/:id" => "users#update",as:"user_update"
       put "users/:id" => "users#update"
