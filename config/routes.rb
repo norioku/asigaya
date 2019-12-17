@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
 # users
       get "users/:id" => "users#show", as: "user"
+      get "users/:id/favorite" => "users#favorite", as: "user_favorite"
       get "users/:id/edit" => "users#edit",as: "user_edit"
       patch "users/:id" => "users#update",as:"user_update"
       put "users/:id" => "users#update"
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
 
 #post
  	  get "posts" => "posts#index", as: "posts"
+ 	  get "posts/favorite" => "posts#favorite", as:"posts_favorite"
       get "posts/new" => "posts#new",as: "post_new"
       get "posts/:id" => "posts#show",as:"post_show"
       get "posts/:id/edit" => "posts#edit",as:"post_edit"
@@ -45,6 +47,7 @@ Rails.application.routes.draw do
 	  
 #location_information
     get "location_informations" => "location_informations#index"
+    
     
 #favorite
     get "users/:id/favorite" => "favorite#index", as: "favorite_index"

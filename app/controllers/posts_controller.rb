@@ -1,12 +1,25 @@
 class PostsController < ApplicationController
 	def index
 		@posts = if params[:tag].present?
-				    Post.tagged_with(params[:tag])
+				    Post.tagged_with(params[:tag]).page(params[:page]).per(2)
 		         else
-		         	Post.all
+		         	Post.all.page(params[:page]).per(2)
 		         end
 		@users = User.all    
 		@tags = ActsAsTaggableOn::Tag.includes(:taggings).where("taggings_count > 0")
+	end
+	
+	def favorite
+		@posts = if params[:tag].present?
+				    Post.tagged_with(params[:tag]).page(params[:page]).per(2)
+		         else
+		         	Post.all.page(params[:page]).per(2)
+		         end
+		@users = User.all    
+		@tags = ActsAsTaggableOn::Tag.includes(:taggings).where("taggings_count > 0")
+		@array = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+		@all_ranks = Kaminari.paginate_array(@array).page(params[:page]).per(2)
+		
 	end
 
 	def show

@@ -5,3 +5,39 @@
 .user-show {
     height:700px;
 }
+
+.user-show-username {
+    text-align: center;
+    font-size: 45px;
+}
+
+.user-show-user {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #66CDAA;
+    width: 300px;
+    margin: 80px 0 0 0;
+}
+
+.user-show-userimage {
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.user-show-closelink {
+    text-align: center;
+    margin: 10px 0 5px 0;
+}
+
+.user-show-editlink {
+    margin: -30px 0 10px 0;
+}
+
+.user-show-favoritelink {
+    margin-bottom: 10px;
+}
+
+.user-show-posthead {
+    margin: 30px 20px 10px 40px;
+    border-bottom: solid 1px black;
+}

@@ -75,6 +75,7 @@
 .show-post-title {
     font-size: 35px;
     border-bottom: double 5px #93FFAB;
+    margin-top: -35px;
 }
 
 .show-post-content {
@@ -136,8 +137,19 @@
 }
 
 .post-show-newlink {
-    font-size :25px;
-    margin-left: 30px;
+    font-size: 25px;
+    margin-left: 60px;
+    margin-right: -700px;
+}
+
+.post-show-favoritelink {
+    font-size :22px;
+    margin: 4px -145px 0 180px;
+}
+
+.post-show-newarrivallink {
+    font-size :22px;
+    margin: 4px -145px 0 190px;
 }
 
 .flex-container {
@@ -156,4 +168,18 @@
 
 #index-post-tag {
     margin-bottom: 50px;
+}
+
+.post-index-page {
+    margin: 0 0 0 58%;
+    font-size: 20px;
+    color: black;
+    margin-top: -30px;
+    margin-bottom: 50px;
+}
+
+.post-index-userimage img {
+    border-radius: 50%;
+    width:  70px;
+    height: 70px;
 }
