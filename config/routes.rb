@@ -42,8 +42,13 @@ Rails.application.routes.draw do
 
 #inquiries
 	  get "user/:id/inquiries/new" => "inquiries#new", as: "new_user_inquiry"
-    post "user/:id/inquiries" => "inquiries#create", as: "user_inquiries"
+      post "user/:id/inquiries" => "inquiries#create", as: "user_inquiries"
 	  get "user/:id/inquiries/complete" => "inquiries#complete", as: "user_inquiries_complete"
+	 
+#inquiries_admin
+      get "admins/inquiries" => "inquiries#admin_index", as: "admin_inquiry_index"
+      get "admins/inquiries/:id" => "inquiries#admin_show", as: "admin_inquiry_show"
+      patch "admins/inquiries/:id" => "admin_inquiries#create"
 	  
 #location_information
     get "location_informations" => "location_informations#index"

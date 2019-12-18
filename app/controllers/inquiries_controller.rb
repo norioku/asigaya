@@ -12,4 +12,12 @@ def complete
     @user = User.find(params[:id])
 end
 
+def admin_index
+    
+end
+
+def admin_show
+    
+end
+
 end
