@@ -17,9 +17,9 @@ Rails.application.routes.draw do
       get "users/:id/edit" => "users#edit",as: "user_edit"
       patch "users/:id" => "users#update",as:"user_update"
       put "users/:id" => "users#update"
-      get "users/:id/close" => "users#close",as: "user_close"
+      get "users/:id/unsubscribe" => "users#unsubscribe",as: "user_unsubscribe"
       delete "users/:id/destroy" => "users#destroy",as: "destroy_user"
-      get "users/close" => "users#complete"
+      get "users/exit" => "users#exit",as: "user_exit"
 
 
 #user devise_def

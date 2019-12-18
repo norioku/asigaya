@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-7 col-xs-offset-3">
+            <h1 class="user-unsubscribe-head">退会確認ページ</h1>
+
+            <div class="user-unsubscribe-text">退会しますと今までの投稿等、会員情報が全て削除されます。<br>
+                                         再度ご利用頂くには新規登録が必要になります。<br>
+                                         本当に退会してよろしいですか。
+            </div>
+            
+            <div class="user-unsubscribe-link">
+                <div class="user-unsubscribe-showlink">
+                    <%= link_to "マイページに戻る", user_path, class: 'btn btn-default' %>
+                </div>
+
+                <div class="user-unsubscribe-deletelink">
+                    <%= link_to "退会する", destroy_user_path, method: :delete, class: 'btn btn-default ' %>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

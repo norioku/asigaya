@@ -8,12 +8,10 @@
     <%= f.text_field :name %>
 
     <h4>プロフィール</h4>
-    <%= f.text_field :profile %></br>
+    <%= f.text_area:profile %></br>
 
     <div>
     <%= f.submit '変更を適用する',class: "btn btn-default" %></br>
-</div>
-<div>
-    <%= link_to "退会はこちら", user_close_path(@user) ,class: "btn btn-default"%>
-</div>
-  <% end %>
+    </div>
+
+<% end %>

@@ -25,21 +25,18 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_close_path
+    redirect_to root_path
   end
 
-  def close
+  def unsubscribe
     @user = User.find(params[:id])
   end
 
-  def complete
-     @user = current_user
-  end
   
   private
 
   def user_params
-    params.require(:user).permit(:email, :name, :image, :profire )
+    params.require(:user).permit(:email, :name, :image, :profile )
   end
   
 end
