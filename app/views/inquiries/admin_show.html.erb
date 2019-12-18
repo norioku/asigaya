@@ -1,1 +1,66 @@
-<h1>お問い合わせ詳細</h1>
+<div class="body">
+<div class="center-block">
+
+<h2 class="a">お問い合わせ詳細</h2>
+
+<div class="f-inquiry">
+<div class="f-item-a">
+<p>ユーザ名： </p>
+</div>
+<div class="f-item">
+<%= @inquiry.user_name %>
+</div>
+</div>
+
+<div class="f-inquiry">
+<div class="f-item-a">
+<p>メールアドレス： </p>
+</div>
+<div class="f-item">
+<%= @inquiry.email %>
+</div>
+</div>
+
+<div class="f-inquiry">
+<div class="f-item-a">
+<p>カテゴリ： </p>
+</div>
+<div class="f-item">
+<%= @inquiry.subject %>
+</div>
+</div>
+
+<div class="f-inquiry">
+<div class="f-item-a">
+<p>内容： </p>
+</div>
+<div class="f-item">
+<%= @inquiry.content %>
+</div>
+</div>
+
+	<% if @inquiry.reply.blank? %>
+	<%= form_for(@inquiry, url: {controller:"inquiries",action:"update"})  do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+  <%= f.hidden_field :status, :value => "返信済" %>
+              <%= f.text_area :reply, :placeholder => "返信内容を入力", :size=>"70x15" %>
+
+
+   <%= f.submit '入力内容を送信', class: "botan btn btn-primary btn-block btn-lg" %>
+
+    <% end %>
+    <% else %>
+
+      <div class="f-inquiry">
+      <div class="f-item-a">
+        <p>返信内容： </p>
+        </div>
+        <div class="f-item">
+          <%= @inquiry.reply %>
+      </div>
+      </div>
+
+
+    <% end %>
+</div>
+</div>

@@ -48,7 +48,7 @@ Rails.application.routes.draw do
 #inquiries_admin
       get "admins/inquiries" => "inquiries#admin_index", as: "admin_inquiry_index"
       get "admins/inquiries/:id" => "inquiries#admin_show", as: "admin_inquiry_show"
-      patch "admins/inquiries/:id" => "admin_inquiries#create"
+      patch "admins/inquiries/:id" => "inquiries#update"
 	  
 #location_information
     get "location_informations" => "location_informations#index"
