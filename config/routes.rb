@@ -20,6 +20,9 @@ Rails.application.routes.draw do
       get "users/:id/unsubscribe" => "users#unsubscribe",as: "user_unsubscribe"
       delete "users/:id/destroy" => "users#destroy",as: "destroy_user"
       get "users/exit" => "users#exit",as: "user_exit"
+      
+# users admin側
+    get "admins/users" => "users#admin_index",as: "users"
 
 
 #user devise_def

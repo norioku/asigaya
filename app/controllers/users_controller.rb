@@ -31,6 +31,12 @@ class UsersController < ApplicationController
   def unsubscribe
     @user = User.find(params[:id])
   end
+  
+  #ユーザ一覧ページ
+  def admin_index
+    @users = User.all
+  end
+  
 
   
   private

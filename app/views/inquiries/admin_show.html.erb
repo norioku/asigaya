@@ -1,40 +1,40 @@
-<div class="body">
+<div class="inquiry-admin-show">
 <div class="center-block">
 
-<h2 class="a">お問い合わせ詳細</h2>
+<h2>お問い合わせ詳細</h2>
 
-<div class="f-inquiry">
-<div class="f-item-a">
+<div class="inquiry-group">
+<div class="inquiry-group-item">
 <p>ユーザ名： </p>
 </div>
-<div class="f-item">
+<div class="inquiry-group-item">
 <%= @inquiry.user_name %>
 </div>
 </div>
 
-<div class="f-inquiry">
-<div class="f-item-a">
+<div class="inquiry-group">
+<div class="inquiry-group-item">
 <p>メールアドレス： </p>
 </div>
-<div class="f-item">
+<div class="inquiry-group-item">
 <%= @inquiry.email %>
 </div>
 </div>
 
-<div class="f-inquiry">
-<div class="f-item-a">
+<div class="inquiry-group">
+<div class="inquiry-group-item">
 <p>カテゴリ： </p>
 </div>
-<div class="f-item">
+<div class="inquiry-group-item">
 <%= @inquiry.subject %>
 </div>
 </div>
 
-<div class="f-inquiry">
-<div class="f-item-a">
+<div class="inquiry-group">
+<div class="inquiry-group-item">
 <p>内容： </p>
 </div>
-<div class="f-item">
+<div class="inquiry-group-item">
 <%= @inquiry.content %>
 </div>
 </div>
@@ -45,17 +45,18 @@
   <%= f.hidden_field :status, :value => "返信済" %>
               <%= f.text_area :reply, :placeholder => "返信内容を入力", :size=>"70x15" %>
 
-
-   <%= f.submit '入力内容を送信', class: "botan btn btn-primary btn-block btn-lg" %>
+  <div class="inquiry-botton">
+    <%= f.submit '入力内容で返信する', class: "btn btn-success btn-block btn-lg" %>
+  </div>
 
     <% end %>
     <% else %>
 
-      <div class="f-inquiry">
-      <div class="f-item-a">
+      <div class="inquiry-group">
+      <div class="inquiry-group-item">
         <p>返信内容： </p>
         </div>
-        <div class="f-item">
+        <div class="inquiry-group-item">
           <%= @inquiry.reply %>
       </div>
       </div>

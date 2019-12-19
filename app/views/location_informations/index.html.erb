@@ -41,15 +41,14 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK39Tyi_S53HaiDfjFdjEfHvGcQ4ACWs"></script> 
 
       <div class="container">
-      <button onclick="getMyPlace()" class="btn-square-little-rich" >阿佐ヶ谷へ行く！<i class="fas fa-chevron-circle-right fa-second"></i></button></div>
+      <button onclick="getMyPlace()" class="btn-square-little-rich" >阿佐ヶ谷へ行く！ <i class="fas fa-chevron-circle-right fa-second"></i></button></div>
       <div id="result"></div>
       <div id="map" style="width:550px; height:320px; margin: 10px 0 0 -25px;"></div>
       
       
     <div class="location-infomation-time">
       現在地から阿佐ヶ谷までの移動時間は車で
-    <span id="time"></span>
-    !!
+    <span class="location-infomation-time-number"><span id="time"></span></span>
     </div>
     
     <script>
@@ -73,18 +72,32 @@
           center: latlng ,// 中心座標
         } ) ;
         
-        // マーカーの新規出力ピン
-        new google.maps.Marker( {
-          map: map ,
-          position: latlng ,
-          icon:'<%= asset_url("start.pin.png") %>'
-        } ) ;
+       
       
       
         var directionsService = new google.maps.DirectionsService();
         var directionsRenderer = new google.maps.DirectionsRenderer();
-        var latlng1 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);  // VAL研究所
+        var latlng1 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);  // 現在地
         var latlng2 = new google.maps.LatLng(35.704778, 139.635278);  // 阿佐ヶ谷駅
+        
+        var RenderOptions = {
+          map: map ,
+          position: latlng1 ,
+          icon:'<%= asset_url("start.pin.png") %>'
+        }
+      
+       // マーカーの新規出力ピン
+        new google.maps.Marker( {
+          map: map ,
+          position: latlng1 ,
+          icon:'<%= asset_url("start.pin.png") %>'
+        } ) ;
+        
+        new google.maps.Marker( {
+          map: map ,
+          position: latlng2 ,
+          icon:'<%= asset_url("gorl.pin.png") %>'
+        } ) ;
       
         // ルートを取得
         var request = {
@@ -92,15 +105,25 @@
           destination: latlng2,   // 到着地点の緯度、経度
           travelMode: google.maps.DirectionsTravelMode.DRIVING// ルートの種類
         };
-        directionsService.route(request, function(result, status) {
+
+  directionsService.route(request, function(result,status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      new google.maps.DirectionsRenderer({
+        map: map,
+        directions: result,
+        suppressMarkers: true // デフォルトのマーカーを削除
+      });
+    };
           
           let time = result.routes[0].legs[0].duration.text
           $('#time').text(time);
           
-          directionsRenderer.setDirections(result); // 取得したルートをセット
+        
           directionsRenderer.setMap(map); // ルートを地図に表示
         });
       }
+      
+      suppressMarkers: true
     
       function error() {
         output.innerHTML = "座標位置を取得できません";

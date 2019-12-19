@@ -99,6 +99,10 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     enumerize (2.3.1)
       activesupport (>= 3.2)
     erubi (1.9.0)
@@ -278,6 +282,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  dotenv-rails
   enumerize
   font-awesome-sass (~> 5.4.1)
   jbuilder (~> 2.5)

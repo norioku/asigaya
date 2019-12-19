@@ -14,10 +14,13 @@
 		        <% tags.each do |tag| %>
                     <%= link_to tag_path(tag) do %>
 			            <div class="show-post-tag">
-			        	    <button class="btn btn-success show-post-tag"><%= tag %></button>
+			        	    <button class="btn btn-outline-success show-post-tag"><%= tag %></button>
 			            </div>
                     <% end %>
                 <% end %>
+                
+                <%= render 'favorites/favorite', post: @post %> 
+                
             </div>
         </div>
         

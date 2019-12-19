@@ -34,7 +34,9 @@
 					<div class="post-index-name">
 						<p><%= rank.user.name %>さん</p>
 					</div>
+					<div class="post-index-userimage">
 					<%= attachment_image_tag rank.user, :image, :fill, 60, 60, fallback: "no-image.png", size:'60x60' %>
+					</div>
 				</div>
 				
 				<div class="col-lg-5">
