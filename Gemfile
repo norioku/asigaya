@@ -69,7 +69,7 @@ end
 
 gem 'kaminari', '~> 0.17.0'
 
-gem 'bootstrap-sass', '~> 3.4.1'
+gem 'bootstrap', '~> 4.3.1'
 
 gem 'jquery-rails'
 
