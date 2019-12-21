@@ -32,7 +32,9 @@
 			
 				<div class="col-lg-1 post-index-user">
 					<div class="post-index-name">
-						<p><%= post.user.name %>さん</p>
+						<%= link_to user_path(post.user.id) do %>
+						<%= post.user.name %>さん
+						<% end %>
 					</div>
 					<div class="post-index-userimage">
 						<%= attachment_image_tag post.user, :image, :fill, 60, 60, fallback: "no-image.png", size:'60x60' %>
@@ -47,10 +49,10 @@
 								<button class="btn btn-default btn-sm index-post-tag"><%= tag %></button>
 							<% end %>
 						<% end %>
-					<p class="post-index-content"><%= post.content.truncate(25) %></p>
+					<p class="post-index-content"><%= post.content.truncate(20) %></p>
 					
 					<div class="flex-container">
-					<h1>
+					<h1 class="post-index-showlink">
 					<%= link_to post_show_path(post.id) do %>
             		<i class="fas fa-chevron-circle-right fa-second"></i>
         			<% end %>

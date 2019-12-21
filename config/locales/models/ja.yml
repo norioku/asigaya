@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+    inquiry: お問い合わせ
+    attributes:
+      inquiry:
+        content: 内容
+        subject: カテゴリ
+        reply: 返信内容
+
+      post:
+        title: タイトル
+        content: 本文
+        image_id: 画像
+        location: 場所
+        
+      user:
+        name: ユーザ名
+        email: メールアドレス
+        password: パスワード
+        blank: が空になっています

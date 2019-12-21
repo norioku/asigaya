@@ -1,4 +1,7 @@
 class InquiriesController < ApplicationController
+    
+    before_action :authenticate_user!
+    before_action :admin?, only: [:admin_index,:admin_show,:update]
 
     def new
   	    @inquiry = Inquiry.new
@@ -15,6 +18,7 @@ class InquiriesController < ApplicationController
             redirect_to user_inquiries_complete_path(@user)
         else
   	    render action: :new
+  	    flash[:danger] = "入力内容に不備があります。"
         end
     end
 
@@ -46,6 +50,12 @@ class InquiriesController < ApplicationController
 	 end
 
 	private
+	
+	def admin?
+	   if current_user.admin == false
+	       redirect_to root_path
+	   end
+	end
 
 	def inquiry_params
 		params.require(:inquiry).permit(:email, :name, :subject, :content, :reply)

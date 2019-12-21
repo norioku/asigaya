@@ -5,10 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   validates :name,           presence: true
-  validates :email,          presence: true
-  validates :profile,        length: { maximum: 200 }
+  validates :profile,        length: { maximum: 50 }
 
-  # has_many :favorites, dependent: :destroy
   has_many :posts
   has_many :favorites, dependent: :destroy
   has_many :favorite_posts, through: :favorites, source: :post
