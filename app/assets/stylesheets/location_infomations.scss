@@ -5,14 +5,14 @@
 .btn-square-little-rich {
   padding: 0.3em 1em;
   text-decoration: none;
-  color: black;
-  background: #5BFF7F;/*色*/
+  background: #90EE90;/*色*/
   border: solid 1px #DCC2FF;/*線色*/
   border-radius: 4px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2);
   text-shadow: 0 2px 0 rgba(0,0,0,0.2);
-  font-size: 25px;
-  margin: 10px 0 0 -40px;
+  font-size: 27px;
+  margin: 10px 0 0 -45px;
+  width: 400px;
 }
 
 .btn-square-little-rich:active {
@@ -45,11 +45,12 @@
     line-height: 1.6em;
     letter-spacing: 2px;
     padding: 0.5em;
-    background: #E6FFE9;
+    background: #Transparent;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
     text-align: center;
     display: inline-block;
     text-align: left;
+    border-radius: 5px;
 }
 
 .location-infomation-head {
@@ -96,7 +97,6 @@
 
 .location-infomation-time {
     font-size: 20px;
-    font-weight: bold;
     margin: 15px 0 0 -25px;
     position: relative;
     padding-left: 25px;
@@ -124,3 +124,7 @@
   border-bottom: solid 3px #FFA07A;
 }
 
+.location-infomation-time-number {
+    font-weight: bold;
+    font-size: 22px;
+}

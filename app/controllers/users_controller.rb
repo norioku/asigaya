@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_action :authenticate_user!
+  before_action :admin?, only: [:admin_index]
 
   def show
     @user = User.find(params[:id])
@@ -25,21 +28,27 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_close_path
+    redirect_to root_path
   end
 
-  def close
+  def unsubscribe
     @user = User.find(params[:id])
   end
-
-  def complete
-     @user = current_user
+  
+  def admin_index
+    @users = User.all
   end
   
   private
+  
+  def admin?
+	   if current_user.admin == false
+	       redirect_to root_path
+	   end
+	end
 
   def user_params
-    params.require(:user).permit(:email, :name, :image, :profire )
+    params.require(:user).permit(:email, :name, :image, :profile )
   end
   
 end

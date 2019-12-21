@@ -4,20 +4,25 @@
 
             <div class="flexcontainer">
                 <div class="post-show-userimage">
-                    <%= attachment_image_tag @user, :image, :fill, 70, 70, fallback: "no-image.png", size:'70x70' %>
+                    <%= attachment_image_tag @user, :image, :fill, 80, 80, fallback: "no-image.png" ,size:'80x80'%>
                 </div>
-                <h3 class="show-post-name">
+                <div class="show-post-name">
+                    <%= link_to user_path(@post.user.id) do %>
                     <%= @user.name %>
-                </h3>
+                    <% end %>
+                </div>
         
                 <% tags = @post.tag_list %>
 		        <% tags.each do |tag| %>
                     <%= link_to tag_path(tag) do %>
 			            <div class="show-post-tag">
-			        	    <button class="btn btn-success show-post-tag"><%= tag %></button>
+			        	    <button class="btn btn-default-green show-post-tag"><%= tag %></button>
 			            </div>
                     <% end %>
                 <% end %>
+                
+                <%= render 'favorites/favorite', post: @post %> 
+                
             </div>
         </div>
         
@@ -78,15 +83,9 @@
                                 }
 
                             });
-                            
-                            //    map = new google.maps.Map(target, {
-                            //      center: tokyo,
-                            //      zoom: 15,
-                            //    });
                         }
                     </script>
-                    
-                <!--googlemap API-->
+    
             </div>
             
             <h2 class="show-post-title">
@@ -98,13 +97,17 @@
             </div>
 
             <div class="flexcontainer">
+                <% if @post.user_id == current_user.id %>
                 <div class="post-show-link">
                     <%= link_to "投稿を編集", post_edit_path, class: 'btn btn-default' %>
                 </div>
+                <% end %>
             
+                <% if @post.user_id == current_user.id %>
                 <div class="post-show-link">
                     <%= link_to "投稿を削除する", destroy_post_path, method: :delete, class: 'btn btn-default' %>                    
                 </div>
+                <% end %>
             </div>
         </div>
     </div>

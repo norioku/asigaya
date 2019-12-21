@@ -17,9 +17,12 @@ Rails.application.routes.draw do
       get "users/:id/edit" => "users#edit",as: "user_edit"
       patch "users/:id" => "users#update",as:"user_update"
       put "users/:id" => "users#update"
-      get "users/:id/close" => "users#close",as: "user_close"
+      get "users/:id/unsubscribe" => "users#unsubscribe",as: "user_unsubscribe"
       delete "users/:id/destroy" => "users#destroy",as: "destroy_user"
-      get "users/close" => "users#complete"
+      get "users/exit" => "users#exit",as: "user_exit"
+      
+# users admin側
+    get "admins/users" => "users#admin_index",as: "users"
 
 
 #user devise_def
@@ -42,8 +45,13 @@ Rails.application.routes.draw do
 
 #inquiries
 	  get "user/:id/inquiries/new" => "inquiries#new", as: "new_user_inquiry"
-    post "user/:id/inquiries" => "inquiries#create", as: "user_inquiries"
+      post "user/:id/inquiries" => "inquiries#create", as: "user_inquiries"
 	  get "user/:id/inquiries/complete" => "inquiries#complete", as: "user_inquiries_complete"
+	 
+#inquiries_admin
+      get "admins/inquiries" => "inquiries#admin_index", as: "admin_inquiry_index"
+      get "admins/inquiries/:id" => "inquiries#admin_show", as: "admin_inquiry_show"
+      patch "admins/inquiries/:id" => "inquiries#update"
 	  
 #location_information
     get "location_informations" => "location_informations#index"

@@ -1,3 +1,82 @@
 // Place all the styles related to the inquiries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.use-inquiry-newhead {
+    padding:20px;
+	text-align: left;
+}
+
+.use-inquiry-new-form {
+    padding:20px;
+}
+
+.use-inquiry-new-title {
+    font-weight: bold;
+}
+
+.user-inquiries-form {
+    margin-bottom: 30px;
+}
+
+.user-inquiry-complete {
+    padding: 30px 0 150px 0;
+}
+
+.user-inquiry-text {
+    padding :10px 0 50px 0;
+	font-size : 20px;
+}
+
+.center-block {
+	margin: 0 auto;
+	width: 70%;
+}
+
+.user-inquiry-complete {
+    margin: 0 auto;
+	width: 60%;
+}
+
+
+
+
+
+
+.inquiry-group {
+	font-size: 22px;
+	display: flex;
+}
+
+.inquiry-group-item {
+	font-size: 22px;
+	flex-diretion: row;
+}
+
+.f-inquiries {
+	font-size: 22px;
+	flex-diretion: row;
+	flex-wrap:wrap;
+}
+
+.f-item-a {
+	font-size: 22px;
+	flex-diretion: row;
+	font-weight: bold;
+}
+
+.botan {
+	margin-top: 20px;
+}
+
+.inquiry-admin-show {
+	width: 80%;
+}
+
+.inquiry-botton {
+    margin: 20px 0 50px 0;
+}
+
+.form-control {
+    margin-bottom: 40px;
+}

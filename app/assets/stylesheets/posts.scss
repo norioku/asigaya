@@ -60,12 +60,12 @@
 }
 
 .show-post-name {
-    margin: 5px 25px 0 25px;
+    margin: 15px 40px 0 25px;
     font-size: 35px;
 }
 
 .show-post-tag {
-    margin-top: 20px;
+    margin: 10px 3px 0 0;
 }
 
 .post-show-image {
@@ -84,7 +84,7 @@
 }
 
 .post-show-return {
-    margin-top: 40px;
+    margin: 40px 50px 0 0;
     font-size: 26px;
 }
 
@@ -175,11 +175,80 @@
     font-size: 20px;
     color: black;
     margin-top: -30px;
-    margin-bottom: 50px;
 }
 
 .post-index-userimage img {
     border-radius: 50%;
-    width:  70px;
-    height: 70px;
+    width:  62px;
+    height: 62px;
+    margin-right: 20px;
+}
+
+.post-new-text p {
+    margin: 0; 
+    padding: 0;
+}
+
+
+.post-new-title {
+    margin-top: 20px;
+    font-size: 23px;
+    color: #008080;
+}
+
+.post-new-titleform {
+    width: 560px;
+    height: 35px;
+}
+
+.post-new-title-tag {
+    font-size: 18px;
+}
+
+.post-new-button {
+    width: 560px;
+    height: 45px;
+    background: #007700;
+}
+
+.post-new-button-margin {
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.post-new-head {
+    margin-top: 50px;
+    border-bottom: double 3px;
+    position: relative;
+    border: 1px solid #004400; 
+    margin: 2em auto;
+    padding: 20px 15px 10px 20px;
+    z-index: 0;
+    letter-spacing: 8px;
+}
+
+.post-new-head:before,
+.post-new-head:after {
+     position: absolute;
+     content: '';
+     width: 100%;
+     height: 100%;
+}
+    
+.post-new-head:before {
+     border: 1px solid #005500; 
+     bottom: -4px;
+     right: -4px;
+     z-index: 1;
+}
+    
+.post-new-head:after {
+     border: 1px solid #007700; 
+     bottom: -7px;
+     right: -7px;
+     z-index: 2;
+}
+
+.post-show-userimage img{
+    border-radius: 50%;
 }

@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.title{
+.home-title{
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -78,7 +78,7 @@
     float:right;
 }
 
-.text {
+.home-text {
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -86,9 +86,10 @@
   float:right;
   font-size:22px;
   font-weight: 200;
-  margin: 300px 30px 0 0;
+  margin: 260px 30px 0 0;
   line-height: 2em;
   text-decoration: none;
+  letter-spacing:3px;
 }
 
 .text-second{
@@ -99,9 +100,10 @@
   float:right;
   font-size:22px;
   font-weight: 200;
-  margin: 280px 30px 0 0;
+  margin: 260px 30px 0 0;
   line-height: 2em;
   text-decoration: none;
+  letter-spacing:3px;
 }
 
 .text-third {
@@ -115,20 +117,13 @@
   margin: 280px 30px 0 0;
   line-height: 2em;
   text-decoration: none;
+  letter-spacing:3px;
 }
 
 .title-third-br {
   margin-top: 200px;
 }
 
-.fa-second {
-  color:black;
-}
-
- .fa-third {
-   color:white;
- }
- 
 .title-third-T {
     text-combine-upright: all;
     text-orientation: sideways;

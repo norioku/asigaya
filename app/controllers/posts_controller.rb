@@ -1,9 +1,12 @@
 class PostsController < ApplicationController
+	
+	before_action :authenticate_user!
+	
 	def index
 		@posts = if params[:tag].present?
-				    Post.tagged_with(params[:tag]).page(params[:page]).per(2)
+				    Post.tagged_with(params[:tag]).page(params[:page]).per(4)
 		         else
-		         	Post.all.page(params[:page]).per(2)
+		         	Post.all.page(params[:page]).per(4)
 		         end
 		@users = User.all    
 		@tags = ActsAsTaggableOn::Tag.includes(:taggings).where("taggings_count > 0")
@@ -11,14 +14,14 @@ class PostsController < ApplicationController
 	
 	def favorite
 		@posts = if params[:tag].present?
-				    Post.tagged_with(params[:tag]).page(params[:page]).per(2)
+				    Post.tagged_with(params[:tag]).page(params[:page]).per(4)
 		         else
-		         	Post.all.page(params[:page]).per(2)
+		         	Post.all.page(params[:page]).per(4)
 		         end
 		@users = User.all    
 		@tags = ActsAsTaggableOn::Tag.includes(:taggings).where("taggings_count > 0")
-		@array = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
-		@all_ranks = Kaminari.paginate_array(@array).page(params[:page]).per(2)
+		@array = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(4).pluck(:post_id))
+		@all_ranks = Kaminari.paginate_array(@array).page(params[:page]).per(4)
 		
 	end
 
@@ -73,10 +76,7 @@ class PostsController < ApplicationController
 	  def post_params
 	    params.require(:post).permit(:title, :content, :address, :tag_list, :image, :location)
 	  end
-    
-  #  def favorite_params
-		# 	params.require(:).permit(:)
-		# end
+
 	
 	def user_params
 		params.require(:user).permit(:name, :image)
@@ -86,8 +86,5 @@ class PostsController < ApplicationController
 		params.require(:tag).permit(:tag, :name)
 	end
 	
-	# def image_params
-	# 	params.require(:image).permit(:image_path)
-	# end
 end
 	

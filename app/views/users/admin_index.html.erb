@@ -1,0 +1,24 @@
+<div class="col-sm-12">
+	<div class = "endusers-box">
+	<h1 class="enduser-title">登録ユーザ一覧</h1>
+		<table class="table table-bordered table-striped orderhistroy-table">
+		  <thead>
+		    <tr>
+		      <th scope="col">ユーザID</th>
+		      <th scope="col">ユーザ名</th>
+		      <th scope="col">メールアドレス</th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		  <% @users.each do |user| %>
+		    <tr>
+		      <td><span><%= user.id %></span></td>
+		      <td><span><%=link_to user.name, user_path(user)%></span></td>
+		      <td><span><%= user.email %></span></td>
+		    </tr>
+		  <% end %>
+		  </tbody>
+		</table>
+	</div>
+</div>

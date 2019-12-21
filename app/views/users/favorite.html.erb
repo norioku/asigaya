@@ -5,20 +5,25 @@
             <div class="user-show-user">
 
 <p class="user-show-userimage"><%= attachment_image_tag @user, :image, :fill, 150, 150, fallback: "no-image.png", size:'150x150' %></p>
-<h2 class="user-show-username"><%= @user.name %></h2><br>
-<p><%= @user.profile %></p><br>
+<h2 class="user-show-username"><%= @user.name %></h2>
+<div class="user-show-userprofile"><%= simple_format(@user.profile) %></div>
 
+<% if user_session == current_user.id or @user.admin = true %>
 <div class="user-show-editlink">
 <%= link_to "プロフィール編集", user_edit_path, class: 'btn btn-default btn-block' %>
 </div>
+<% end %>
 
 <div class="user-show-favoritelink">
 <%= link_to "投稿した一覧", user_path, class: 'btn btn-default btn-block' %>
 </div>
 
+
+<% if user_session == current_user.id or @user.admin = true %>
 <div class="user-show-closelink">
-<%= link_to "退会はこちら", user_close_path %>
+<%= link_to "退会はこちら", user_unsubscribe_path %>
 </div>
+<% end %>
 
 </div>
 </div>
