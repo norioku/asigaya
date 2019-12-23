@@ -1,121 +1,116 @@
 <% if params[:controller] == "homes" %>
-<header class="header">
-  <% else %>
+  <header class="header">
+<% else %>
   <header class="header-sub">
-  <% end %>
+<% end %>
   
   
-  <h1 class = "logo-head">
-    <%= link_to root_path, class: "logo-link" do %>
-    
+<h1 class = "logo-head">
+  <%= link_to root_path, class: "logo-link" do %>
     <% if params[:controller] == "homes" %>
-    <div class="logo-top"></div>
+      <div class="logo-top"></div>
     <% else %>
-    <div class="logo"></div>
+      <div class="logo"></div>
     <% end %>
-    
-    <% end %>
-  </h1>
-  
-  
-  <nav>
-    <% if user_signed_in? %>
+  <% end %>
+</h1>
+
+<nav>
+  <% if user_signed_in? %>
     <% if params[:controller] == "homes" %>
       <ul class = "nav-list">
-      　<% else %>
-        <ul class = "nav-list-sub">
-        <% end %>
-        
-        <% if current_user.admin? %>
-        <h2 class="admin-home">
-          管理人でログイン中
-        </h2>
-        <% end %>
-
-        <% unless current_page?(user_path(current_user)) %>
-        <% unless current_page?(user_favorite_path(current_user)) %>
-          <li class = "nav-item">
-            <div class = "nav-link">
-            <%= link_to user_path(current_user) do %>
-              マイページ
-            <% end %>
-            </div>
-          </li>
-        <% end %>
-        <% end %>
-        
-
-          <li class = "nav-item">
-            <div class = "nav-link">
-            <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？"} do %>
-              ログアウト
-            <% end %>
-            </div>
-          </li>
-          
-        <% unless current_page?(new_user_inquiry_path(current_user)) %>
-          <li class = "nav-item">
-            <div class = "nav-link">
-            <%= link_to new_user_inquiry_path(current_user) do %>
-              お問い合わせ
-            <% end %>
-            </div>
-          </li>
-        <% end %>
-      
-      <% unless current_page?(admin_inquiry_index_path(current_user)) %>
-      <% if current_user.admin? %>
-          <li class = "nav-item">
-            <div class = "nav-link">
-            <%= link_to admin_inquiry_index_path do %>
-              お問い合わせ一覧
-            <% end %>
-            </div>
-          </li>
-      <% end %>
-      <% end %>
-      
-      <% unless current_page?(users_path(current_user)) %>
-      <% if current_user.admin? %>
-          <li class = "nav-item">
-            <div class = "nav-link">
-            <%= link_to users_path do %>
-              ユーザ一覧
-            <% end %>
-            </div>
-          </li>
-      <% end %>
-      <% end %>
-      
-      </ul>
-      
-        <% else %>
-        
-      <% if params[:controller] == "homes" %>
-      <ul class = "nav-list">
-        <% else %>
-        <ul class = "nav-list-sub">
-        <% end %>
-        
-        <% unless current_page?(new_user_registration_path) %>
-          <li class = "nav-item">
-            <div class = "nav-link">
-            <%= link_to new_user_registration_path do %>
-              新規登録
-            <% end %>
-          </div>
-          </li>
-        <% end %>
-        <% unless current_page?(new_user_session_path) %>
-          <li class = "nav-item">
-            <div class = "nav-link">
-            <%= link_to new_user_session_path do %>
-              ログイン
-            <% end %>
-          </div>
-          </li>
-        <% end %>
-      </ul>
+    <% else %>
+      <ul class = "nav-list-sub">
     <% end %>
-  </nav>
-</header>
+        
+    <% if current_user.admin? %>
+      <h2 class="admin-home">
+      管理人でログイン中
+      </h2>
+    <% end %>
+
+    <% unless current_page?(user_path(current_user)) %>
+      <% unless current_page?(user_favorite_path(current_user)) %>
+        <li class = "nav-item">
+          <div class = "nav-link">
+            <%= link_to user_path(current_user) do %>
+            マイページ
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+        
+    <li class = "nav-item">
+      <div class = "nav-link">
+        <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？"} do %>
+        ログアウト
+        <% end %>
+      </div>
+    </li>
+          
+    <% unless current_page?(new_user_inquiry_path(current_user)) %>
+      <li class = "nav-item">
+        <div class = "nav-link">
+          <%= link_to new_user_inquiry_path(current_user) do %>
+          お問い合わせ
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+      
+    <% unless current_page?(admin_inquiry_index_path(current_user)) %>
+      <% if current_user.admin? %>
+        <li class = "nav-item">
+          <div class = "nav-link">
+            <%= link_to admin_inquiry_index_path do %>
+            お問い合わせ一覧
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+      
+    <% unless current_page?(users_path(current_user)) %>
+      <% if current_user.admin? %>
+        <li class = "nav-item">
+          <div class = "nav-link">
+            <%= link_to users_path do %>
+            ユーザ一覧
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+      
+    </ul>
+      
+  <% else %>
+        
+    <% if params[:controller] == "homes" %>
+      <ul class = "nav-list">
+    <% else %>
+      <ul class = "nav-list-sub">
+    <% end %>
+        
+    <% unless current_page?(new_user_registration_path) %>
+      <li class = "nav-item">
+        <div class = "nav-link">
+          <%= link_to new_user_registration_path do %>
+          新規登録
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+    <% unless current_page?(new_user_session_path) %>
+      <li class = "nav-item">
+        <div class = "nav-link">
+          <%= link_to new_user_session_path do %>
+          ログイン
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <% end %>
+</nav>
