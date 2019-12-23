@@ -8,9 +8,9 @@
 <h1 class = "logo-head">
   <%= link_to root_path, class: "logo-link" do %>
     <% if params[:controller] == "homes" %>
-      <div class="logo-top"></div>
+      <div class="logo-top" style="background-image:url(<%= asset_path "logo.top.png" %>)" /></div>
     <% else %>
-      <div class="logo"></div>
+      <div class="logo" style="background-image:url(<%= asset_path "logo.png" %>)" /></div>
     <% end %>
   <% end %>
 </h1>
