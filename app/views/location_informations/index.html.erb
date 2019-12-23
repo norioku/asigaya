@@ -1,139 +1,99 @@
 <div class="container">
-<div class="location-infomation">
-	<div class="row">
-	<div class="col-xs-5">
-
-    <p class="location-infomation-text">
-      あなたの現在地から阿佐ヶ谷駅</br>
-      までの距離を表示します</br>
-      右下のボタンを押してみましょう</br>
-      意外と近いかも！</br>
-    </p>
-
-    
-    
-    <div class="location-infomation-image-left">
-    </div>
-    
-  </div>
-    
-  <div class="col-xs-2">
-    
-    <div class="location-infomation-head">LE<span class="location-infomation-head-T">T'</span><span class="location-infomation-head-line">S GO<br></span>
-      <span class="location-infomation-head-br"><span class="location-infomation-head-line-second">阿佐ヶ谷</span></span></div>
-      
-  
-  </div>
-  
-  <div class="col-xs-5">
-    
-    <div class="location-infomation-image-right">
-    </div>
-  
-  
-  <div class="infomation-location-post-link">
-    みんなのおすすめ場所をみてみる
-      <%= link_to posts_path do %>
+  <div class="location-infomation">
+  	<div class="row">
+	    <div class="col-xs-5">
+        <p class="location-infomation-text">
+        あなたの現在地から阿佐ヶ谷駅</br>
+        までの距離を表示します</br>
+        右下のボタンを押してみましょう</br>
+        意外と近いかも！</br>
+        </p>
+        <div class="location-infomation-image-left">
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <div class="location-infomation-head">LE<span class="location-infomation-head-T">T'</span><span class="location-infomation-head-line">S GO<br></span>
+        <span class="location-infomation-head-br"><span class="location-infomation-head-line-second">阿佐ヶ谷</span></span></div>
+      </div>
+      <div class="col-xs-5">
+        <div class="location-infomation-image-right">
+      </div>
+      <div class="infomation-location-post-link">
+        みんなのおすすめ場所をみてみる
+        <%= link_to posts_path do %>
         <i class="fas fa-chevron-circle-right fa-second"></i>
-      <% end %>
-  </div>
-    <!--google map api-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK39Tyi_S53HaiDfjFdjEfHvGcQ4ACWs"></script> 
-
-      <div class="container">
-      <button onclick="getMyPlace()" class="btn-square-little-rich" >阿佐ヶ谷へ行く！ <i class="fas fa-chevron-circle-right fa-second"></i></button></div>
-      <div id="result"></div>
-      <div id="map" style="width:550px; height:320px; margin: 10px 0 0 -25px;"></div>
+        <% end %>
+      </div>
       
-      
-    <div class="location-infomation-time">
-      現在地から阿佐ヶ谷までの移動時間は車で
-    <span class="location-infomation-time-number"><span id="time"></span></span>
-    </div>
-    
-    <script>
-
-    function getMyPlace() {
-      var output = document.getElementById("result");
-      if (!navigator.geolocation){//Geolocation apiがサポートされていない場合
-        output.innerHTML = "<p>Geolocationはあなたのブラウザーでサポートされておりません</p>";
-        return;
-      }
-      
-      function success(position) {
-        var latitude  = position.coords.latitude;//緯度
-        var longitude = position.coords.longitude;//経度
-        
-        // 位置情報
-        var latlng = new google.maps.LatLng( latitude , longitude ) ;
-        // Google Mapsに書き出し
-        var map = new google.maps.Map( document.getElementById( 'map' ) , {
-          zoom: 15 ,// ズーム値
-          center: latlng ,// 中心座標
-        } ) ;
-        
-       
-      
-      
-        var directionsService = new google.maps.DirectionsService();
-        var directionsRenderer = new google.maps.DirectionsRenderer();
-        var latlng1 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);  // 現在地
-        var latlng2 = new google.maps.LatLng(35.704778, 139.635278);  // 阿佐ヶ谷駅
-        
-        var RenderOptions = {
-          map: map ,
-          position: latlng1 ,
-          icon:'<%= asset_url("start.pin.png") %>'
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK39Tyi_S53HaiDfjFdjEfHvGcQ4ACWs"></script> 
+        <div class="container">
+          <button onclick="getMyPlace()" class="btn-square-little-rich" >阿佐ヶ谷へ行く！ <i class="fas fa-chevron-circle-right fa-second"></i></button></div>
+          <div id="result"></div>
+          <div id="map" style="width:550px; height:320px; margin: 10px 0 0 -25px;"></div>
+        <div class="location-infomation-time">
+        現在地から阿佐ヶ谷までの移動時間は車で
+        <span class="location-infomation-time-number"><span id="time"></span></span>
+        </div>
+        <script>
+        function getMyPlace() {
+          var output = document.getElementById("result");
+          if (!navigator.geolocation){//Geolocation apiがサポートされていない場合
+            output.innerHTML = "<p>Geolocationはあなたのブラウザーでサポートされておりません</p>";
+          return;
         }
-      
-       // マーカーの新規出力ピン
-        new google.maps.Marker( {
-          map: map ,
-          position: latlng1 ,
-          icon:'<%= asset_url("start.pin.png") %>'
+        function success(position) {
+          var latitude  = position.coords.latitude;
+          var longitude = position.coords.longitude;
+          var latlng = new google.maps.LatLng( latitude , longitude ) ;
+          var map = new google.maps.Map( document.getElementById( 'map' ) , {
+            zoom: 15 ,
+            center: latlng ,
         } ) ;
-        
-        new google.maps.Marker( {
-          map: map ,
-          position: latlng2 ,
-          icon:'<%= asset_url("gorl.pin.png") %>'
-        } ) ;
-      
-        // ルートを取得
-        var request = {
-          origin: latlng1,        // 出発地点の緯度、経度
-          destination: latlng2,   // 到着地点の緯度、経度
-          travelMode: google.maps.DirectionsTravelMode.DRIVING// ルートの種類
-        };
-
-  directionsService.route(request, function(result,status) {
-    if (status === google.maps.DirectionsStatus.OK) {
-      new google.maps.DirectionsRenderer({
-        map: map,
-        directions: result,
-        suppressMarkers: true // デフォルトのマーカーを削除
-      });
-    };
-          
-          let time = result.routes[0].legs[0].duration.text
-          $('#time').text(time);
-          
-        
-          directionsRenderer.setMap(map); // ルートを地図に表示
-        });
-      }
-      
-      suppressMarkers: true
-    
-      function error() {
-        output.innerHTML = "座標位置を取得できません";
-      }
-
-      navigator.geolocation.getCurrentPosition(success, error);//成功と失敗を判断
-    }
-    </script>
-    <!--google map api-->
+          var directionsService = new google.maps.DirectionsService();
+          var directionsRenderer = new google.maps.DirectionsRenderer();
+          var latlng1 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+          var latlng2 = new google.maps.LatLng(35.704778, 139.635278);
+          var RenderOptions = {
+            map: map ,
+            position: latlng1 ,
+            icon:'<%= asset_url("start.pin.png") %>'
+          }
+          new google.maps.Marker( {
+            map: map ,
+            position: latlng1 ,
+            icon:'<%= asset_url("start.pin.png") %>'
+          } ) ;
+          new google.maps.Marker( {
+            map: map ,
+            position: latlng2 ,
+            icon:'<%= asset_url("gorl.pin.png") %>'
+          } ) ;
+          var request = {
+            origin: latlng1,
+            destination: latlng2,
+            travelMode: google.maps.DirectionsTravelMode.DRIVING
+          };
+          directionsService.route(request, function(result,status) {
+            if (status === google.maps.DirectionsStatus.OK) {
+              new google.maps.DirectionsRenderer({
+              map: map,
+              directions: result,
+              suppressMarkers: true
+              });
+            };
+            let time = result.routes[0].legs[0].duration.text
+              $('#time').text(time);
+              directionsRenderer.setMap(map);
+              });
+            }
+            suppressMarkers: true
+            function error() {
+              output.innerHTML = "座標位置を取得できません";
+            }
+            navigator.geolocation.getCurrentPosition(success, error);
+          }
+        </script>
+      </div>
     </div>
-  </div>
   </div>
 </div>

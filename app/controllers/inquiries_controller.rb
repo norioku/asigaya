@@ -17,8 +17,8 @@ class InquiriesController < ApplicationController
   	    if @inquiry.save
             redirect_to user_inquiries_complete_path(@user)
         else
-  	    render action: :new
-  	    flash[:danger] = "入力内容に不備があります。"
+  	        render action: :new
+  	        flash[:danger] = "入力内容に不備があります。"
         end
     end
 
@@ -38,7 +38,6 @@ class InquiriesController < ApplicationController
     def update
         @inquiry = Inquiry.find(params[:id])
 		    if @inquiry.update(inquiry_params)
-
 			    flash[:success] = "送信されました。"
                 @inquiry.update(status: "返信済")
 			    InquiryMailer.send_mail(@inquiry).deliver_now
@@ -47,18 +46,18 @@ class InquiriesController < ApplicationController
 			    flash.now[:danger] = "未記入の箇所があります。"
 			    render :admin_show
 		    end
-	 end
+	end
 
 	private
 	
 	def admin?
-	   if current_user.admin == false
-	       redirect_to root_path
-	   end
+        if current_user.admin == false
+            redirect_to root_path
+	    end
 	end
 
 	def inquiry_params
 		params.require(:inquiry).permit(:email, :name, :subject, :content, :reply)
 	end
 
-    end
+end

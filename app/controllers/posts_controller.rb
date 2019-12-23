@@ -70,12 +70,12 @@ class PostsController < ApplicationController
 		else
 			render action: :edit
 		end
-   end
+    end
 
 	private
-	  def post_params
-	    params.require(:post).permit(:title, :content, :address, :tag_list, :image, :location)
-	  end
+		def post_params
+	    	params.require(:post).permit(:title, :content, :address, :tag_list, :image, :location)
+		end
 
 	
 	def user_params

@@ -41,10 +41,10 @@
 }
 
 .home-about{
-    background-image:url(top1.jpg);
-    width:100%;
-    height:650px;
-    background-size: cover;
+  background: image-url("top1.jpg");
+  width:100%;
+  height:650px;
+  background-size: cover;
 }
 
 .home-post-text{
@@ -53,29 +53,29 @@
 }
 
 .home-post-image{
-    background-image:url(top2.jpg);
-    width:70%;
-    height:570px;
-    background-size: cover;
-    margin-top:40px;
-    margin-bottom: 40px;
-    float:left;
+  background: image-url("top2.jpg");
+  width:70%;
+  height:570px;
+  background-size: cover;
+  margin-top:40px;
+  margin-bottom: 40px;
+  float:left;
 }
 
 .home-location-infomation-left{
-    background-image:url(top5.jpg);
-    width:50%;
-    height:650px;
-    background-size: cover;
-    float:left;
+  background: image-url("top5.jpg");
+  width:50%;
+  height:650px;
+  background-size: cover;
+  float:left;
 }
 
 .home-location-infomation-right{
-    background-image:url(top4.jpg);
-    width:50%;
-    height:650px;
-    background-size: cover;
-    float:right;
+  background: image-url("top4.jpg");
+  width:50%;
+  height:650px;
+  background-size: cover;
+  float:right;
 }
 
 .home-text {
@@ -125,11 +125,11 @@
 }
 
 .title-third-T {
-    text-combine-upright: all;
-    text-orientation: sideways;
-    position: relative;
-    left: 0.3em;
-    font-size: 1.2em;
-    margin-bottom: 8px;
-    transform: scale(1.7,1);
+  text-combine-upright: all;
+  text-orientation: sideways;
+  position: relative;
+  left: 0.3em;
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  transform: scale(1.7,1);
 }

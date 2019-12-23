@@ -1,36 +1,25 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-<h1 class="post-new-head">新規投稿ページ</h1>
-
-<%= form_for(@post, url: post_create_path) do |f| %>
-
-<%= render 'layouts/error_messages', model: f.object %>
-
-    <h4 class="post-new-title">タイトル</h4>
-    <%= f.text_field :title, class:"post-new-titleform" %>
-
-    <h4 class="post-new-title">本文</h4>
-    <%= f.text_area :content, size:"67x13" %>
-
-    <h4 class="post-new-title">行った場所</h4>
-    <%= f.text_field :location, class:"post-new-titleform" %>
-    
-    <h4 class="post-new-title">写真</h4>
-    <%= f.attachment_field :image %>
-
-    <div class='field'>
-        <h4 class="post-new-title">タグ<span class="post-new-title-tag">(カンマで区切る・5個まで)</span></h4>
-        <%= f.text_field :tag_list, :placeholder => "例)商店街,いちょう並木︎", class:"post-new-titleform" %>
+            <h1 class="post-new-head">新規投稿ページ</h1>
+            <%= form_for(@post, url: post_create_path) do |f| %>
+                <%= render 'layouts/error_messages', model: f.object %>
+                <h4 class="post-new-title">タイトル</h4>
+                <%= f.text_field :title, class:"post-new-titleform" %>
+                <h4 class="post-new-title">本文</h4>
+                <%= f.text_area :content, size:"67x13" %>
+                <h4 class="post-new-title">行った場所</h4>
+                <%= f.text_field :location, class:"post-new-titleform" %>
+                <h4 class="post-new-title">写真</h4>
+                <%= f.attachment_field :image %>
+                <div class='field'>
+                    <h4 class="post-new-title">タグ<span class="post-new-title-tag">(カンマで区切る・5個まで)</span></h4>
+                    <%= f.text_field :tag_list, :placeholder => "例)商店街,いちょう並木︎", class:"post-new-titleform" %>
+                </div>
+                <div class="post-new-button-margin">
+                <%= f.submit '入力内容で投稿する！',class: "btn btn-success post-new-button" %>
+                </div>
+            <% end %>
+        </div>
     </div>
-    
-    <div class="post-new-button-margin">
-    <%= f.submit '入力内容で投稿する！',class: "btn btn-success post-new-button" %>
-    </div>
-    
-<% end %>
-
-</div>
-</div>
-</div>
 </div>
