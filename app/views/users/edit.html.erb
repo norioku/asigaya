@@ -1,0 +1,19 @@
+<div class="user-edit">
+   <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h2 class="user-edit-head">プロフィール編集</h2>
+            <%= form_for(@user, url: user_update_path) do |f| %>
+                <%= render 'layouts/error_messages', model: f.object %>
+                <h4>プロフィール写真</h4>
+                <%= f.attachment_field :image, class:"devise_form-edit" %>
+                <h4>ユーザネーム</h4>
+                <%= f.text_field :name, class:"devise_form-edit" %>
+                <h4>プロフィール</h4>
+                <%= f.text_area:profile, size:"42x5" %></br>
+                <div>
+                    <%= f.submit '変更を適用する', class: "btn btn-default user-edit-button" %></br>    
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
