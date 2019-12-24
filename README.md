@@ -1,24 +1,28 @@
-# README
+#ライブラリの名前
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+あしたは阿佐ヶ谷
 
-Things you may want to cover:
+┗阿佐ヶ谷が好きな方も、訪れたことのない方も「あしたは阿佐ヶ谷行こうかな」と思ってもらえるようなサイトにしたく
+このサイト名にしました。
 
-* Ruby version
+#サイト概要
+自身の阿佐ヶ谷お気に入りの場所を、他ユーザと共有できる投稿サイトです。
 
-* System dependencies
+#デプロイURL
+https://asigaya.tokyo
 
-* Configuration
+#スチール
+https://user-images.githubusercontent.com/51260304/65322742-988d4e00-dbe2-11e9-8487-8edcddd08b79.png(360 kB)
+https://user-images.githubusercontent.com/51260304/65322742-988d4e00-dbe2-11e9-8487-8edcddd08b79.png
 
-* Database creation
+#機能
 
-* Database initialization
+投稿機能
+現在地からのルート機能
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#使い方
+新規登録ページより、会員登録を行います。
+会員登録が完了したら、本ページ上部のログインフォームからメールアドレスとパスワードを入力してログインします。ログインした後に、マイページ　→　編集ページでスキルを登録してください。トップページに登録したスキルのカテゴリに紐づくユーザーが表示されるので、話したいと思った相手に＜いいね＞をします。
+お互いに＜いいね＞を行った場合、マッチング成立となりメッセージのやりとりができるようになります。
+作成したきっかけ
+健康寿命が伸び、定年後も働きたいと考えている人が増えているというニュースを見て、そのような人たちの能力を生かすことができる仕組みがあればいいと考えたためこのサイトを作成しました。
