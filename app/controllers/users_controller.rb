@@ -13,6 +13,9 @@ class UsersController < ApplicationController
 
     def edit
       @user = User.find(params[:id])
+      if current_user != @user or @user.admin != true
+	      redirect_to root_path
+      end
     end
 
     def update
@@ -33,6 +36,9 @@ class UsersController < ApplicationController
 
     def unsubscribe
       @user = User.find(params[:id])
+      if current_user != @user or @user.admin != true
+	      redirect_to root_path
+      end
     end
   
     def admin_index

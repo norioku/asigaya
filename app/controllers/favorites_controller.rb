@@ -2,13 +2,10 @@ class FavoritesController < ApplicationController
     
     before_action :set_variables
     
-   
-
     def favorite
         favorite = current_user.favorites.new(post_id: @post.id)
         favorite.save
     end
-    
 
     def unfavorite
         favorite = current_user.favorites.find_by(post_id: @post.id)

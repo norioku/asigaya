@@ -7,11 +7,13 @@
 					<h2 class="user-show-username"><%= @user.name %></h2>
 					<div class="user-show-userprofile"><%= simple_format(@user.profile) %>
 					</div>
-					<% if user_session == current_user.id or @user.admin = true %>
+					
 						<div class="user-show-editlink">
+							<% if user_session == current_user.id or @user.admin = true %>
 							<%= link_to "プロフィール編集", user_edit_path, class: 'btn btn-default btn-block' %>
+							<% end %>
 						</div>
-					<% end %>
+				
 					<div class="user-show-favoritelink">
 						<%= link_to "いいねした投稿", user_favorite_path, class: 'btn btn-default btn-block' %>
 					</div>
