@@ -7,19 +7,19 @@
 					<h2 class="user-show-username"><%= @user.name %></h2>
 					<div class="user-show-userprofile"><%= simple_format(@user.profile) %>
 					</div>
-					<% if user_session == current_user.id or @user.admin = true %>
-						<div class="user-show-editlink">
-							<%= link_to "プロフィール編集", user_edit_path, class: 'btn btn-default btn-block' %>
+						<% if @user.id == current_user.id or @admin == true %>
+							<div class="user-show-editlink">
+								<%= link_to "プロフィール編集", user_edit_path, class: 'btn btn-default btn-block' %>
+							</div>
+						<% end %>
+						<div class="user-show-favoritelink">
+							<%= link_to "いいねした投稿", user_favorite_path, class: 'btn btn-default btn-block' %>
 						</div>
-					<% end %>
-					<div class="user-show-favoritelink">
-						<%= link_to "いいねした投稿", user_favorite_path, class: 'btn btn-default btn-block' %>
-					</div>
-					<% if user_session == current_user.id or @user.admin = true %>
-						<div class="user-show-closelink">
-							<%= link_to "退会はこちら", user_unsubscribe_path %>
-						</div>
-					<% end %>
+						<% if @user.id == current_user.id or @admin == true %>
+							<div class="user-show-closelink">
+								<%= link_to "退会はこちら", user_unsubscribe_path %>
+							</div>
+						<% end %>
 				</div>
 			</div>
 			<div class="col-xs-8 user-show-post">

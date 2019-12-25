@@ -73,12 +73,12 @@
                 <%= simple_format(@post.content) %>
             </div>
             <div class="flexcontainer">
-                <% if @post.user_id == current_user.id %>
+                <% if @user.id == current_user.id or @admin == true %>
                     <div class="post-show-link">
                         <%= link_to "投稿を編集", post_edit_path, class: 'btn btn-default' %>
                     </div>
                 <% end %>
-                <% if @post.user_id == current_user.id %>
+                <% if @user.id == current_user.id or @admin == true %>
                     <div class="post-show-link">
                         <%= link_to "投稿を削除する", destroy_post_path, method: :delete, class: 'btn btn-default' %>                    
                     </div>
