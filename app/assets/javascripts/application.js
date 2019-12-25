@@ -17,5 +17,6 @@
 //= require bootstrap-sprockets
 //= require bootstrap-select
 //= require rails-ujs
+//= require bootstrap-tagsinput.min
 //= require_tree 
 

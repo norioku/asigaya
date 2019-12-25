@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
     def edit
       @user = User.find(params[:id])
-      if current_user != @user or @user.admin != true
+      if current_user.id != @user.id && @user.admin != true
 	      redirect_to root_path
       end
     end
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
     def unsubscribe
       @user = User.find(params[:id])
-      if current_user != @user or @user.admin != true
+      if current_user.id != @user.id && @user.admin != true
 	      redirect_to root_path
       end
     end
