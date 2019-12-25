@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><div class="logo-top" style="background-image:url(<%= asset_path "logo.top.png" %>)" /></div>Asigaya</title>
+    <title>Asigaya</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/b842afdc94.js" crossorigin="anonymous"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag %>
   </head>
 
   <body class="<%= controller.controller_path%> <%= controller.action_name%>">
