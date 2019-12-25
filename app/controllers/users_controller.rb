@@ -5,6 +5,9 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
+        if current_user.id == 1
+          @admin = true
+        end
     end
   
     def favorite
