@@ -75,7 +75,7 @@
             <div class="flexcontainer">
                 <% if @user.id == current_user.id or current_user.admin == true %>
                     <div class="post-show-link">
-                        <%= link_to "投稿を編集", post_edit_path turbolinks="false", class: 'btn btn-default' %>
+                        <%= link_to "投稿を編集", post_edit_path, class: 'btn btn-default' %>
                     </div>
                 <% end %>
                 <% if @user.id == current_user.id or current_user.admin == true %>
