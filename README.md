@@ -10,8 +10,6 @@
 https://asigaya.tokyo
 
 #スチール
-https://user-images.githubusercontent.com/51260304/65322742-988d4e00-dbe2-11e9-8487-8edcddd08b79.png(360 kB)
-https://user-images.githubusercontent.com/51260304/65322742-988d4e00-dbe2-11e9-8487-8edcddd08b79.png
 
 #機能
 投稿機能
