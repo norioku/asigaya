@@ -16,8 +16,8 @@
 			            <div class="show-post-tag">
 			        	    <button class="btn btn-default-green show-post-tag"><%= tag %></button>
 			            </div>
+                        <% end %>
                     <% end %>
-                <% end %>
                 <%= render 'favorites/favorite', post: @post %> 
             </div>
         </div>
@@ -44,7 +44,7 @@
                         'use strict';
                         var target = document.getElementById('target');
                         var map;
-                        var address = '<%= @post.location %>'; //住所を指定
+                        var address = '<%= @post.location %>';
                         var geocoder = new google.maps.Geocoder();
                         geocoder.geocode({ address: address }, function(results, status){
                             if (status === 'OK' && results[0]){
@@ -73,14 +73,14 @@
                 <%= simple_format(@post.content) %>
             </div>
             <div class="flexcontainer">
-                <% if @user.id == current_user.id or @admin == true %>
+                <% if @user.id == current_user.id or current_user.admin == true %>
                     <div class="post-show-link">
                         <%= link_to "投稿を編集", post_edit_path, class: 'btn btn-default' %>
                     </div>
                 <% end %>
-                <% if @user.id == current_user.id or @admin == true %>
+                <% if @user.id == current_user.id or current_user.admin == true %>
                     <div class="post-show-link">
-                        <%= link_to "投稿を削除する", destroy_post_path, method: :delete, class: 'btn btn-default' %>                    
+                        <%= link_to "投稿を削除する", destroy_post_path, method: :delete, data: {confirm: "投稿を削除してよろしいですか？"}, class: 'btn btn-default' %>                    
                     </div>
                 <% end %>
             </div>
