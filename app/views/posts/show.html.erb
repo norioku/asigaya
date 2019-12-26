@@ -53,11 +53,22 @@
                                     center: results[0].geometry.location,
                                     zoom: 18
                                     });
+                                    var contentString = '店名：<%= @post.location %>';
+                                    var infowindow = new google.maps.InfoWindow({
+                                    });
+                                    
                                     var marker = new google.maps.Marker({
                                     position: results[0].geometry.location,
                                     map: map,
                                     animation: google.maps.Animation.DROP
                                     });
+                                    //google.maps.event.addListener(marker,‘click’, (function(marker,content,infowindow) {
+                                    google.maps.event.addListener(marker, 'click',(function(marker,content,infowindow) {
+                                      return function(){
+                                        infowindow.setContent(content);
+                                        infowindow.open(map,marker);
+                                      };
+                                    })(marker,contentString,infowindow));
                             }else{
                                 alert('住所が正しくないか存在しません。');
                                 target.style.display='none';
