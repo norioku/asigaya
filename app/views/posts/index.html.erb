@@ -2,13 +2,14 @@
 	<div class="post-index">
 		<div class="row">
 			<div class="col-xs-4 post-index-head">阿佐ヶ谷広場</div>
+			
 				<div class="col-xs-3 post-show-favoritelink">いいね順でみる
                 	<%= link_to posts_favorite_path do %>
                     <i class="fas fa-chevron-circle-right fa-second"></i>
                 	<% end %>
             	</div>
             	<div class="col-xs-4 post-show-newlink">新しい投稿がしたい！
-                	<%= link_to post_new_path turbolinks="false" do %>
+                	<%= link_to post_new_path do %>
                 	<i class="fas fa-chevron-circle-right fa-second"></i>
                 	<% end %>
             	</div>
