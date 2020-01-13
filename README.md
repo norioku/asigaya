@@ -1,5 +1,5 @@
 ## ライブラリの名前
-「あしたは阿佐ヶ谷」
+### 「あしたは阿佐ヶ谷」
 　阿佐ヶ谷が好きな方も、訪れたことのない方も「あしたは阿佐ヶ谷行こうかな」と思ってもらえるようなサイトにしたく、このサイト名にしました。
 
 ## サイト概要
@@ -11,7 +11,7 @@ https://asigaya.tokyo
 #スチール
 ![asigaya.top.png](https://user-images.githubusercontent.com/55277210/72256269-1a026380-364c-11ea-8996-8bc8eb15be88.png)
 
-![Uploading README.post.png…]()
+![asigaya.post.png](https://user-images.githubusercontent.com/55277210/72257099-1ff94400-364e-11ea-8994-824f987c39d3.png)
 
 ## 機能
 投稿機能
