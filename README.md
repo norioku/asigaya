@@ -14,8 +14,9 @@ https://asigaya.tokyo
 ![asigaya.post.png](https://user-images.githubusercontent.com/55277210/72257099-1ff94400-364e-11ea-8994-824f987c39d3.png)
 
 ## 機能
-投稿機能
-現在地からのルート機能
+・投稿機能
+・投稿一覧表示(新着順・いいね順・タグでの絞込み)
+・現在地からのルート機能
 
 ## 使い方
 新規登録ページより、会員登録を行います。
