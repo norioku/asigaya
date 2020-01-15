@@ -1,17 +1,17 @@
 <div class = "row">
-  <div class="center-block">
-    <h2 class="use-inquiry-newhead">お問い合わせページ</h2>
-    <div class="use-inquiry-new-form">
-    	<%= form_for(@inquiry, url: user_inquiries_path) do |f| %>
-        <%= render 'layouts/error_messages', model: f.object %>
-    	  <%= f.label :subject, 'お問い合わせのカテゴリ' %><br>
-        <%= f.select :subject, [["阿佐ヶ谷広場について", "阿佐ヶ谷広場について"], ["Let's Go 阿佐ヶ谷について", "Let's Go 阿佐ヶ谷について"], ["サイト内での不具合", "サイト内での不具合"], ["その他", "その他"]], {},class:"form-control" %>
-        <h4 class="use-inquiry-new-title">お問い合わせ内容</h4>
-        <div class = "form-group">
-      	  <%= f.text_area :content, size: "127x15", class: "form-control user-inquiries-form" %>
-      	  <%= f.submit '入力内容を送信する' , class: "btn btn-success btn-block btn-lg"%>
-        </div>
-      <% end %>
-    </div>
-  </div>
+	<div class="center-block">
+		<h2 class="use-inquiry-newhead">お問い合わせページ</h2>
+		<div class="use-inquiry-new-form">
+			<%= form_for(@inquiry, url: user_inquiries_path) do |f| %>
+				<%= render 'layouts/error_messages', model: f.object %>
+				<%= f.label :subject, 'お問い合わせのカテゴリ' %><br>
+				<%= f.select :subject, [["阿佐ヶ谷広場について", "阿佐ヶ谷広場について"], ["Let's Go 阿佐ヶ谷について", "Let's Go 阿佐ヶ谷について"], ["サイト内での不具合", "サイト内での不具合"], ["その他", "その他"]], {},class:"form-control" %>
+				<h4 class="use-inquiry-new-title">お問い合わせ内容</h4>
+				<div class = "form-group">
+					<%= f.text_area :content, size: "127x15", class: "form-control user-inquiries-form" %>
+					<%= f.submit '入力内容を送信する' , class: "btn btn-success btn-block btn-lg"%>
+				</div>
+			<% end %>
+		</div>
+	</div>
 </div>

@@ -3,16 +3,16 @@
 		<div class="row">
 			<div class="col-xs-4 post-index-head">阿佐ヶ谷広場</div>
 				<div class="col-xs-3 post-show-newarrivallink">新着順でみる
-                	<%= link_to posts_path do %>
-                    <i class="fas fa-chevron-circle-right fa-second"></i>
-                	<% end %>
-            	</div>
-            	<div class="col-xs-4 post-show-newlink">新しい投稿がしたい！
-                <%= link_to post_new_path do %>
-                <i class="fas fa-chevron-circle-right fa-second"></i>
-                <% end %>
-           		</div>
-        </div>
+					<%= link_to posts_path do %>
+					<i class="fas fa-chevron-circle-right fa-second"></i>
+					<% end %>
+				</div>
+				<div class="col-xs-4 post-show-newlink">新しい投稿がしたい！
+				<%= link_to post_new_path do %>
+				<i class="fas fa-chevron-circle-right fa-second"></i>
+				<% end %>
+				</div>
+		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-9">
@@ -43,9 +43,9 @@
 						<div class="flex-container">
 							<h1>
 								<%= link_to post_show_path(rank.id) do %>
-            					<i class="fas fa-chevron-circle-right fa-second"></i>
-        						<% end %>
-        					</h1>
+								<i class="fas fa-chevron-circle-right fa-second"></i>
+								<% end %>
+							</h1>
 							<%= render 'favorites/favorite', post: rank %> 
 						</div>
 					</div>
@@ -60,7 +60,7 @@
 			<% @tags.each do |tag| %>
 				<%= link_to tag_path(tag.name) do %>
 				<button class="btn btn-default btn-sm tags"><%= tag %></button>
-  				<% end %>
+				<% end %>
 			<% end %>
 		</div>
 	</div>
