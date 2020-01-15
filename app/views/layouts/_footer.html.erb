@@ -5,27 +5,27 @@
 				<div class="row">
 					<div class="col-lg-2 col-xs-offset-3 footer-logo">
 						<%= link_to root_path, class: "footer-logo-link" do %>
-							<div class="logo-footer"> </div>
-							<% end %>
+							<div class="logo-footer" style="background-image:url(<%= asset_path "logo.top.png" %>)" /></div>
+						<% end %>
 					</div>
 					<div class="col-lg-4 col-xs-offset-1">
 						<ul class="footer-nav-list">
 							<% unless current_page?(user_path(current_user)) %>
 								<li class="footer-nav-item">
 									<%= link_to user_path(current_user), class: "footer-nav-link" do %> マイページ
-										<% end %>
+									<% end %>
 								</li>
+							<% end %>
+							<li class="footer-nav-item">
+								<%= link_to destroy_user_session_path, method: :delete, class: "footer-nav-link", data: { confirm: "ログアウトしますか？"} do %> ログアウト
 								<% end %>
+							</li>
+								<% unless current_page?(new_user_inquiry_path(current_user)) %>
 									<li class="footer-nav-item">
-										<%= link_to destroy_user_session_path, method: :delete, class: "footer-nav-link", data: { confirm: "ログアウトしますか？"} do %> ログアウト
-											<% end %>
+									<%= link_to new_user_inquiry_path(current_user), class: "footer-nav-link" do %> お問い合わせ
+									<% end %>
 									</li>
-									<% unless current_page?(new_user_inquiry_path(current_user)) %>
-										<li class="footer-nav-item">
-											<%= link_to new_user_inquiry_path(current_user), class: "footer-nav-link" do %> お問い合わせ
-												<% end %>
-										</li>
-										<% end %>
+								<% end %>
 						</ul>
 					</div>
 					<div class="col-lg-2">
@@ -34,36 +34,36 @@
 				</div>
 			</div>
 			
-			<% else %>
+		<% else %>
 			
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-2 col-xs-offset-3 footer-logo">
-							<%= link_to root_path, class: "footer-logo-link" do %>
-								<div class="logo-footer"> </div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-xs-offset-3 footer-logo">
+						<%= link_to root_path, class: "footer-logo-link" do %>
+							<div class="logo-footer" style="background-image:url(<%= asset_path "logo.top.png" %>)" /></div>
+						<% end %>
+					</div>
+					<div class="col-lg-4 col-xs-offset-1">
+						<ul class="footer-nav-list">
+							<% unless current_page?(new_user_registration_path) %>
+								<li class="footer-nav-item-second">
+								<%= link_to new_user_registration_path, class: "footer-nav-link" do %> 新規登録
 								<% end %>
-						</div>
-						<div class="col-lg-4 col-xs-offset-1">
-							<ul class="footer-nav-list">
-								<% unless current_page?(new_user_registration_path) %>
-									<li class="footer-nav-item-second">
-										<%= link_to new_user_registration_path, class: "footer-nav-link" do %> 新規登録
-											<% end %>
-									</li>
-									<% end %>
-										<% unless current_page?(new_user_session_path) %>
-											<li class="footer-nav-item-second">
-												<%= link_to new_user_session_path, class: "footer-nav-link" do %> ログイン
-													<% end %>
-											</li>
-											<% end %>
-							</ul>
-						</div>
-						<div class="col-lg-2">
-							<p class="footer-text">©あしたは阿佐ヶ谷</p>
-						</div>
+								</li>
+							<% end %>
+							<% unless current_page?(new_user_session_path) %>
+								<li class="footer-nav-item-second">
+								<%= link_to new_user_session_path, class: "footer-nav-link" do %> ログイン
+								<% end %>
+								</li>
+							<% end %>
+						</ul>
+					</div>
+					<div class="col-lg-2">
+						<p class="footer-text">©あしたは阿佐ヶ谷</p>
 					</div>
 				</div>
-				<% end %>
+			</div>
+		<% end %>
 	</nav>
 </footer>

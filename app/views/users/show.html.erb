@@ -1,78 +1,63 @@
 <div class="container">
-<div class = "user-show">
-    <div class="row">
-        <div class="col-xs-4">
-            <div class="user-show-user">
-
-<p class="user-show-userimage"><%= attachment_image_tag @user, :image, :fill, 150, 150, fallback: "no-image.png", size:'150x150' %></p>
-<h2 class="user-show-username"><%= @user.name %></h2>
-<div class="user-show-userprofile"><%= simple_format(@user.profile) %></div>
-
-<% if user_session == current_user.id or @user.admin = true %>
-<div class="user-show-editlink">
-<%= link_to "プロフィール編集", user_edit_path, class: 'btn btn-default btn-block' %>
-</div>
-<% end %>
-
-<div class="user-show-favoritelink">
-<%= link_to "いいねした投稿", user_favorite_path, class: 'btn btn-default btn-block' %>
-</div>
-
-<% if user_session == current_user.id or @user.admin = true %>
-<div class="user-show-closelink">
-<%= link_to "退会はこちら", user_unsubscribe_path %>
-</div>
-<% end %>
-
-</div>
-</div>
-
-<div class="col-xs-8 user-show-post">
-    
-<h2 class="user-show-posthead"><%= @user.name %>さんの投稿一覧</h2>
-
-<% @user.posts.each do |post| %>
-				<div class="row post-index-each">
-		
-				<div class="col-lg-3 col-xs-offset-1 post-index-user-image">
-					<%= attachment_image_tag post, :image, :fill, 200, 200, fallback: "no-image.png", size:'170x200' %>
-				</div>
-			
-			
-				<div class="col-lg-1 post-index-user">
-					<div class="post-index-name">
-						<p><%= post.user.name %>さん</p>
+	<div class = "user-show">
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="user-show-user">
+					<p class="user-show-userimage"><%= attachment_image_tag @user, :image, :fill, 150, 150, fallback: "no-image.png", size:'150x150' %></p>
+					<h2 class="user-show-username"><%= @user.name %></h2>
+					<div class="user-show-userprofile"><%= simple_format(@user.profile) %>
 					</div>
-					<%= attachment_image_tag post.user, :image, :fill, 60, 60, fallback: "no-image.png", size:'60x60' %>
-				</div>
-				
-				<div class="col-lg-5">
-					<h2 class="post-index-title"><%= post.title %></h2>
-					<% tags = post.tag_list %>
-						<% tags.each do |tag| %>
-							<%= link_to tag_path(tag) do %>
-								<button class="btn btn-default btn-sm index-post-tag"><%= tag %></button>
-							<% end %>
+						<% if @user.id == current_user.id or @admin == true %>
+							<div class="user-show-editlink">
+								<%= link_to "プロフィール編集", user_edit_path, class: 'btn btn-default btn-block' %>
+							</div>
 						<% end %>
-					<p class="post-index-content"><%= post.content.truncate(25) %></p>
-					
-					<div class="flex-container">
-					<h1>
-					<%= link_to post_show_path(post.id) do %>
-            		<i class="fas fa-chevron-circle-right fa-second"></i>
-        			<% end %>
-        			</h1>
-        		
-					<%= render 'favorites/favorite', post: post %> 
+						<div class="user-show-favoritelink">
+							<%= link_to "いいねした投稿", user_favorite_path, class: 'btn btn-default btn-block' %>
+						</div>
+						<% if @user.id == current_user.id or @admin == true %>
+							<div class="user-show-closelink">
+								<%= link_to "退会はこちら", user_unsubscribe_path %>
+							</div>
+						<% end %>
+				</div>
+			</div>
+			<div class="col-xs-8 user-show-post">
+				<h2 class="user-show-posthead"><%= @user.name %>さんの投稿一覧</h2>
+				<% @user.posts.each do |post| %>
+					<div class="row post-index-each">
+						<div class="col-lg-3 col-xs-offset-1">
+							<%= attachment_image_tag post, :image, :fill, 200, 200, fallback: "no-image.png", size:'170x200' %>
+						</div>
+						<div class="col-lg-1 post-index-user">
+							<div class="post-index-name">
+								<p><%= post.user.name %></p>
+							</div>
+							<div class="post-index-userimage">
+							<%= attachment_image_tag post.user, :image, :fill, 60, 60, fallback: "no-image.png", size:'60x60' %>
+							</div>
+						</div>
+						<div class="col-lg-5">
+							<h2 class="post-index-title"><%= post.title %></h2>
+							<% tags = post.tag_list %>
+								<% tags.each do |tag| %>
+									<%= link_to tag_path(tag) do %>
+										<button class="btn btn-default btn-sm index-post-tag"><%= tag %></button>
+									<% end %>
+								<% end %>
+								<p class="post-index-content"><%= post.content.truncate(25) %></p>
+								<div class="flex-container">
+									<h1>
+										<%= link_to post_show_path(post.id) do %>
+										<i class="fas fa-chevron-circle-right fa-second"></i>
+										<% end %>
+									</h1>
+									<%= render 'favorites/favorite', post: post %> 
+								</div>
+						</div>
 					</div>
-				</div>
-				</div>
-	<% end %>
-	
-	
-
-</div>
-
-</div>
-</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>

@@ -13,10 +13,9 @@
 //= require jquery
 // require jquery_ujs
 //= require activestorage
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-select
 //= require rails-ujs
-//= require_tree .
-
+//= require bootstrap-tagsinput.min
+//= require_tree 
 

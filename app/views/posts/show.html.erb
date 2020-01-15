@@ -1,114 +1,100 @@
 <div class="container">
-    <div class="row">
-        <div class="col-xs-8 col-xs-offset-1">
-
-            <div class="flexcontainer">
-                <div class="post-show-userimage">
-                    <%= attachment_image_tag @user, :image, :fill, 80, 80, fallback: "no-image.png" ,size:'80x80'%>
-                </div>
-                <div class="show-post-name">
-                    <%= link_to user_path(@post.user.id) do %>
-                    <%= @user.name %>
-                    <% end %>
-                </div>
-        
-                <% tags = @post.tag_list %>
-		        <% tags.each do |tag| %>
-                    <%= link_to tag_path(tag) do %>
-			            <div class="show-post-tag">
-			        	    <button class="btn btn-default-green show-post-tag"><%= tag %></button>
-			            </div>
-                    <% end %>
-                <% end %>
-                
-                <%= render 'favorites/favorite', post: @post %> 
-                
-            </div>
-        </div>
-        
-        <div class="col-xs-3">
-            <div class="post-show-return">広場へ戻る
-                <%= link_to posts_path do %>
-                    <i class="fas fa-chevron-circle-right fa-second"></i>
-                <% end %>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-10 col-xs-offset-1">
-            <div class="flexcontainer">
-            <div class="post-show-image">
-                <%= attachment_image_tag @post, :image, :fill, 500, 400, fallback: "no-image.png", size:'400x370' %>
-            </div>
-            
-            <!--googlemap API-->
-
-                <style type="text/css"></style>
-
-                <div id="target"></div>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK39Tyi_S53HaiDfjFdjEfHvGcQ4ACWs&callback=initMap" async defer></script>
-                    <script>
-
-                        function initMap() {
-                        'use strict';
-                        
-                        var target = document.getElementById('target');
-                        var map;
-                        //var tokyo = {lat: 35.681167, lng: 139.767052};
-
-                        var address = '<%= @post.location %>'; //住所を指定
-                        var geocoder = new google.maps.Geocoder();
-
-                        geocoder.geocode({ address: address }, function(results, status){
-                            if (status === 'OK' && results[0]){
-                                console.log(results[0].geometry.location);
-
-                                    var map = new google.maps.Map(target, {
-                                    center: results[0].geometry.location,
-                                    zoom: 18
-                                    });
-
-                                    var marker = new google.maps.Marker({
-                                    position: results[0].geometry.location,
-                                    map: map,
-                                    animation: google.maps.Animation.DROP
-                                    });
-
-                            }else{
-                                
-
-                                alert('住所が正しくないか存在しません。');
-                                target.style.display='none';
-                                }
-
-                            });
-                        }
-                    </script>
-    
-            </div>
-            
-            <h2 class="show-post-title">
-                <%= @post.title %>
-            </h2>
-            
-            <div class="show-post-content">
-                <%= simple_format(@post.content) %>
-            </div>
-
-            <div class="flexcontainer">
-                <% if @post.user_id == current_user.id %>
-                <div class="post-show-link">
-                    <%= link_to "投稿を編集", post_edit_path, class: 'btn btn-default' %>
-                </div>
-                <% end %>
-            
-                <% if @post.user_id == current_user.id %>
-                <div class="post-show-link">
-                    <%= link_to "投稿を削除する", destroy_post_path, method: :delete, class: 'btn btn-default' %>                    
-                </div>
-                <% end %>
-            </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-1">
+			<div class="flexcontainer">
+				<div class="post-show-userimage">
+					<%= attachment_image_tag @user, :image, :fill, 80, 80, fallback: "no-image.png" ,size:'80x80'%>
+				</div>
+				<div class="show-post-name">
+					<%= link_to user_path(@post.user.id) do %>
+					<%= @user.name %>
+					<% end %>
+				</div>
+				<% tags = @post.tag_list %>
+					<% tags.each do |tag| %>
+						<%= link_to tag_path(tag) do %>
+						<div class="show-post-tag">
+							<button class="btn btn-default-green show-post-tag"><%= tag %></button>
+						</div>
+						<% end %>
+					<% end %>
+				<%= render 'favorites/favorite', post: @post %> 
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<div class="post-show-return">広場へ戻る
+				<%= link_to posts_path do %>
+					<i class="fas fa-chevron-circle-right fa-second"></i>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1">
+			<div class="flexcontainer">
+				<div class="post-show-image">
+					<%= attachment_image_tag @post, :image, :fill, 500, 400, fallback: "no-image.png", size:'400x370' %>
+				</div>
+				<style type="text/css"></style>
+				<div id="target"></div>
+					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK39Tyi_S53HaiDfjFdjEfHvGcQ4ACWs&callback=initMap" async defer>
+					</script>
+					<script>
+						function initMap() {
+						'use strict';
+						var target = document.getElementById('target');
+						var map;
+						var address = '<%= @post.location %>';
+						var geocoder = new google.maps.Geocoder();
+						geocoder.geocode({ address: address }, function(results, status){
+							if (status === 'OK' && results[0]){
+								console.log(results[0].geometry.location);
+									var map = new google.maps.Map(target, {
+									center: results[0].geometry.location,
+									zoom: 18
+									});
+									var contentString = '店名：<%= @post.location %>';
+									var infowindow = new google.maps.InfoWindow({
+									});
+									
+									var marker = new google.maps.Marker({
+									position: results[0].geometry.location,
+									map: map,
+									animation: google.maps.Animation.DROP
+									});
+									//google.maps.event.addListener(marker,‘click’, (function(marker,content,infowindow) {
+									google.maps.event.addListener(marker, 'click',(function(marker,content,infowindow) {
+									  return function(){
+										infowindow.setContent(content);
+										infowindow.open(map,marker);
+									  };
+									})(marker,contentString,infowindow));
+							}else{
+								alert('住所が正しくないか存在しません。');
+								target.style.display='none';
+								}
+							});
+						}
+					</script>
+			</div>
+			<h2 class="show-post-title">
+				<%= @post.title %>
+			</h2>
+			<div class="show-post-content">
+				<%= simple_format(@post.content) %>
+			</div>
+			<div class="flexcontainer">
+				<% if @user.id == current_user.id or current_user.admin == true %>
+					<div class="post-show-link">
+						<%= link_to "投稿を編集", post_edit_path, class: 'btn btn-default' %>
+					</div>
+				<% end %>
+				<% if @user.id == current_user.id or current_user.admin == true %>
+					<div class="post-show-link">
+						<%= link_to "投稿を削除する", destroy_post_path, method: :delete, data: {confirm: "投稿を削除してよろしいですか？"}, class: 'btn btn-default' %>                    
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>

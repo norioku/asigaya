@@ -1,24 +1,32 @@
-# README
+## ライブラリの名前
+### 「あしたは阿佐ヶ谷」
+　阿佐ヶ谷が好きな方も、訪れたことのない方も「あしたは阿佐ヶ谷行こうかな」と思ってもらえるようなサイトにしたく、このサイト名にしました。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+自身の阿佐ヶ谷のお気に入りの場所を、他ユーザと共有できる投稿サイトです。
 
-Things you may want to cover:
+## デプロイURL
+https://asigaya.tokyo
 
-* Ruby version
+## スチール
+![asigaya.top.png](https://user-images.githubusercontent.com/55277210/72256269-1a026380-364c-11ea-8996-8bc8eb15be88.png)
 
-* System dependencies
+![asigaya.post.png](https://user-images.githubusercontent.com/55277210/72257099-1ff94400-364e-11ea-8994-824f987c39d3.png)
 
-* Configuration
+## 機能
+・投稿機能
 
-* Database creation
+・投稿一覧表示(新着順・いいね順・タグでの絞込み)
 
-* Database initialization
+・現在地からのルート機能
 
-* How to run the test suite
+## 使い方
+新規登録ページより、会員登録を行います。
 
-* Services (job queues, cache servers, search engines, etc.)
+会員登録後は「阿佐ヶ谷広場」にて新規投稿・他ユーザの投稿閲覧ができます。
 
-* Deployment instructions
+「Let's Go 阿佐ヶ谷」では現在地から阿佐ヶ谷駅までのルートと移動時間を表示できます
 
-* ...
+## 作成したきっかけ
+自身が上京してから現在まで約2年間住んでいる街「阿佐ヶ谷」の魅力をたくさんの人に知って欲しい、
+そして阿佐ヶ谷がもっと活気ある街になるきっかけになるサイトになればと考え、作成しました。

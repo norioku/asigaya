@@ -1,80 +1,67 @@
 <div class="container">
-<div class="post-index">
-	<div class="row">
-	<div class="col-xs-4 post-index-head">阿佐ヶ谷広場</div>
-
-
-		<div class="col-xs-3 post-show-newarrivallink">新着順でみる
-                <%= link_to posts_path do %>
-                    <i class="fas fa-chevron-circle-right fa-second"></i>
-                <% end %>
-            </div>
-
-		
-            <div class="col-xs-4 post-show-newlink">新しい投稿がしたい！
-                <%= link_to post_new_path do %>
-                    <i class="fas fa-chevron-circle-right fa-second"></i>
-                <% end %>
-            </div>
-        </div>
-
+	<div class="post-index">
+		<div class="row">
+			<div class="col-xs-4 post-index-head">阿佐ヶ谷広場</div>
+				<div class="col-xs-3 post-show-newarrivallink">新着順でみる
+					<%= link_to posts_path do %>
+					<i class="fas fa-chevron-circle-right fa-second"></i>
+					<% end %>
+				</div>
+				<div class="col-xs-4 post-show-newlink">新しい投稿がしたい！
+				<%= link_to post_new_path do %>
+				<i class="fas fa-chevron-circle-right fa-second"></i>
+				<% end %>
+				</div>
+		</div>
 	</div>
-
 	<div class="row">
 		<div class="col-lg-9">
 			<% @all_ranks.each.with_index(1) do |rank,i| %>
 				<div class="row post-index-each">
-		
-				<div class="col-lg-3 col-xs-offset-1 post-index-user-image">
-					<%= attachment_image_tag rank, :image, :fill, 200, 200, fallback: "no-image.png", size:'170x200' %>
-				</div>
-			
-			
-				<div class="col-lg-1 post-index-user">
-					<div class="post-index-name">
-						<p><%= rank.user.name %>さん</p>
+					<div class="col-lg-3 col-xs-offset-1 post-index-user-image">
+						<%= attachment_image_tag rank, :image, :fill, 200, 200, fallback: "no-image.png", size:'170x200' %>
 					</div>
-					<div class="post-index-userimage">
-					<%= attachment_image_tag rank.user, :image, :fill, 60, 60, fallback: "no-image.png", size:'60x60' %>
+					<div class="col-lg-1 post-index-user">
+						<div class="post-index-name">
+							<%= link_to user_path(rank.user.id) do %>
+							<p><%= rank.user.name %>さん</p>
+							<% end %>
+						</div>
+						<div class="post-index-userimage">
+							<%= attachment_image_tag rank.user, :image, :fill, 60, 60, fallback: "no-image.png", size:'60x60' %>
+						</div>
 					</div>
-				</div>
-				
-				<div class="col-lg-5">
-					<h2 class="post-index-title"><%= rank.title %></h2>
-					<% tags = rank.tag_list %>
+					<div class="col-lg-5">
+						<h2 class="post-index-title"><%= rank.title %></h2>
+						<% tags = rank.tag_list %>
 						<% tags.each do |tag| %>
 							<%= link_to tag_path(tag) do %>
 								<button class="btn btn-default btn-sm index-post-tag"><%= tag %></button>
 							<% end %>
 						<% end %>
-					<p class="post-index-content"><%= rank.content.truncate(25) %></p>
-					
-					<div class="flex-container">
-					<h1>
-					<%= link_to post_show_path(rank.id) do %>
-            		<i class="fas fa-chevron-circle-right fa-second"></i>
-        			<% end %>
-        			</h1>
-        		
-					<%= render 'favorites/favorite', post: rank %> 
+						<p class="post-index-content"><%= rank.content.truncate(20) %></p>
+						<div class="flex-container">
+							<h1>
+								<%= link_to post_show_path(rank.id) do %>
+								<i class="fas fa-chevron-circle-right fa-second"></i>
+								<% end %>
+							</h1>
+							<%= render 'favorites/favorite', post: rank %> 
+						</div>
 					</div>
 				</div>
-				</div>
-		<% end %>	
-		
-	<div class="post-index-page">
-		<%= paginate @all_ranks %>
-	</div>
-
-</div>
-	<div class="col-lg-3 tag-list">
-		<span class="tag-list-head">タグで検索</span>
-		<% @tags.each do |tag| %>
-			<%= link_to tag_path(tag.name) do %>
+			<% end %>	
+			<div class="post-index-page">
+				<%= paginate @all_ranks %>
+			</div>
+		</div>
+		<div class="col-lg-3 tag-list">
+			<span class="tag-list-head">タグで検索</span>
+			<% @tags.each do |tag| %>
+				<%= link_to tag_path(tag.name) do %>
 				<button class="btn btn-default btn-sm tags"><%= tag %></button>
-  			<% end %>
-		<% end %>
+				<% end %>
+			<% end %>
+		</div>
 	</div>
-							
-</div>
 </div>
