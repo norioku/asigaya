@@ -1,99 +1,99 @@
 <div class="container">
-  <div class="location-infomation">
-  	<div class="row">
-	    <div class="col-xs-5">
-        <p class="location-infomation-text">
-        あなたの現在地から阿佐ヶ谷駅</br>
-        までの距離を表示します</br>
-        右下のボタンを押してみましょう</br>
-        意外と近いかも！</br>
-        </p>
-        <div class="location-infomation-image-left" style="background-image:url(<%= asset_path "location.infomation.left.jpg" %>)" />
-        </div>
-      </div>
-      <div class="col-xs-2">
-        <div class="location-infomation-head">LE<span class="location-infomation-head-T">T'</span><span class="location-infomation-head-line">S GO<br></span>
-        <span class="location-infomation-head-br"><span class="location-infomation-head-line-second">阿佐ヶ谷</span></span></div>
-      </div>
-      <div class="col-xs-5">
-        <div class="location-infomation-image-right" style="background-image:url(<%= asset_path "location.infomation.right.jpg" %>)" />
-        </div>
-      <div class="infomation-location-post-link">
-        みんなのおすすめ場所をみてみる
-        <%= link_to posts_path do %>
-        <i class="fas fa-chevron-circle-right fa-second"></i>
-        <% end %>
-      </div>
-      
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK39Tyi_S53HaiDfjFdjEfHvGcQ4ACWs"></script> 
-        <div class="container">
-          <button onclick="getMyPlace()" class="btn-square-little-rich" >阿佐ヶ谷へ行く！ <i class="fas fa-chevron-circle-right fa-second"></i></button></div>
-          <div id="result"></div>
-          <div id="map" style="width:550px; height:320px; margin: 10px 0 0 -25px;"></div>
-        <div class="location-infomation-time">
-        現在地から阿佐ヶ谷までの移動時間は車で
-        <span class="location-infomation-time-number"><span id="time"></span></span>
-        </div>
-        <script>
-        function getMyPlace() {
-          var output = document.getElementById("result");
-          if (!navigator.geolocation){//Geolocation apiがサポートされていない場合
-            output.innerHTML = "<p>Geolocationはあなたのブラウザーでサポートされておりません</p>";
-          return;
-        }
-        function success(position) {
-          var latitude  = position.coords.latitude;
-          var longitude = position.coords.longitude;
-          var latlng = new google.maps.LatLng( latitude , longitude ) ;
-          var map = new google.maps.Map( document.getElementById( 'map' ) , {
-            zoom: 15 ,
-            center: latlng ,
-        } ) ;
-          var directionsService = new google.maps.DirectionsService();
-          var directionsRenderer = new google.maps.DirectionsRenderer();
-          var latlng1 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-          var latlng2 = new google.maps.LatLng(35.704778, 139.635278);
-          var RenderOptions = {
-            map: map ,
-            position: latlng1 ,
-            icon:'<%= asset_url("start.pin.png") %>'
-          }
-          new google.maps.Marker( {
-            map: map ,
-            position: latlng1 ,
-            icon:'<%= asset_url("start.pin.png") %>'
-          } ) ;
-          new google.maps.Marker( {
-            map: map ,
-            position: latlng2 ,
-            icon:'<%= asset_url("gorl.pin.png") %>'
-          } ) ;
-          var request = {
-            origin: latlng1,
-            destination: latlng2,
-            travelMode: google.maps.DirectionsTravelMode.DRIVING
-          };
-          directionsService.route(request, function(result,status) {
-            if (status === google.maps.DirectionsStatus.OK) {
-              new google.maps.DirectionsRenderer({
-              map: map,
-              directions: result,
-              suppressMarkers: true
-              });
-            };
-            let time = result.routes[0].legs[0].duration.text
-              $('#time').text(time);
-              directionsRenderer.setMap(map);
-              });
-            }
-            suppressMarkers: true
-            function error() {
-              output.innerHTML = "座標位置を取得できません";
-            }
-            navigator.geolocation.getCurrentPosition(success, error);
-          }
-        </script>
-      </div>
-    </div>
-  </div>
+	<div class="location-infomation">
+		<div class="row">
+			<div class="col-xs-5">
+				<p class="location-infomation-text">
+				あなたの現在地から阿佐ヶ谷駅</br>
+				までの距離を表示します</br>
+				右下のボタンを押してみましょう</br>
+				意外と近いかも！</br>
+				</p>
+				<div class="location-infomation-image-left" style="background-image:url(<%= asset_path "location.infomation.left.jpg" %>)" />
+				</div>
+			</div>
+			<div class="col-xs-2">
+				<div class="location-infomation-head">LE<span class="location-infomation-head-T">T'</span><span class="location-infomation-head-line">S GO<br></span>
+				<span class="location-infomation-head-br"><span class="location-infomation-head-line-second">阿佐ヶ谷</span></span></div>
+			</div>
+			<div class="col-xs-5">
+				<div class="location-infomation-image-right" style="background-image:url(<%= asset_path "location.infomation.right.jpg" %>)" />
+				</div>
+			<div class="infomation-location-post-link">
+				みんなのおすすめ場所をみてみる
+				<%= link_to posts_path do %>
+				<i class="fas fa-chevron-circle-right fa-second"></i>
+				<% end %>
+			</div>
+			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK39Tyi_S53HaiDfjFdjEfHvGcQ4ACWs"></script> 
+				<div class="container">
+					<button onclick="getMyPlace()" class="btn-square-little-rich" >阿佐ヶ谷へ行く！ <i class="fas fa-chevron-circle-right fa-second"></i></button></div>
+					<div id="result"></div>
+					<div id="map" style="width:550px; height:320px; margin: 10px 0 0 -25px;"></div>
+				<div class="location-infomation-time">
+				現在地から阿佐ヶ谷までの移動時間は車で
+				<span class="location-infomation-time-number"><span id="time"></span></span>
+				</div>
+				<script>
+				function getMyPlace() {
+					var output = document.getElementById("result");
+					if (!navigator.geolocation){//Geolocation apiがサポートされていない場合
+						output.innerHTML = "<p>Geolocationはあなたのブラウザーでサポートされておりません</p>";
+					return;
+				}
+				function success(position) {
+					var latitude  = position.coords.latitude;
+					var longitude = position.coords.longitude;
+					var latlng = new google.maps.LatLng( latitude , longitude ) ;
+					var map = new google.maps.Map( document.getElementById( 'map' ) , {
+						zoom: 15 ,
+						center: latlng ,
+				} ) ;
+					var directionsService = new google.maps.DirectionsService();
+					var directionsRenderer = new google.maps.DirectionsRenderer();
+					var latlng1 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+					var latlng2 = new google.maps.LatLng(35.704778, 139.635278);
+					var RenderOptions = {
+						map: map ,
+						position: latlng1 ,
+						icon:'<%= asset_url("start.pin.png") %>'
+					}
+					new google.maps.Marker( {
+						map: map ,
+						position: latlng1 ,
+						icon:'<%= asset_url("start.pin.png") %>'
+					} ) ;
+					new google.maps.Marker( {
+						map: map ,
+						position: latlng2 ,
+						icon:'<%= asset_url("gorl.pin.png") %>'
+					} ) ;
+					var request = {
+						origin: latlng1,
+						destination: latlng2,
+						travelMode: google.maps.DirectionsTravelMode.DRIVING
+					};
+					directionsService.route(request, function(result,status) {
+						if (status === google.maps.DirectionsStatus.OK) {
+							new google.maps.DirectionsRenderer({
+							map: map,
+							directions: result,
+							suppressMarkers: true
+							});
+						};
+						let time = result.routes[0].legs[0].duration.text
+							$('#time').text(time);
+							directionsRenderer.setMap(map);
+							});
+						}
+						suppressMarkers: true
+						function error() {
+							output.innerHTML = "座標位置を取得できません";
+						}
+						navigator.geolocation.getCurrentPosition(success, error);
+					}
+				</script>
+			</div>
+		</div>
+	</div>
 </div>

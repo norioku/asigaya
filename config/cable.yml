@@ -1,9 +1,9 @@
 development:
-  adapter: async
+	adapter: async
 
 test:
-  adapter: async
+	adapter: async
 
 production:
-  adapter: async
+	adapter: async
 

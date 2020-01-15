@@ -1,7 +1,7 @@
 ja:
-    pagination:
-      first:  "先頭"
-      last:  "末尾"
-      previous:  "前"
-      next:  "次"
-      truncate:  "..."
+		pagination:
+			first:  "先頭"
+			last:  "末尾"
+			previous:  "前"
+			next:  "次"
+			truncate:  "..."
