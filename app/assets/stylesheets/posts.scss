@@ -3,256 +3,269 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post-index {
-  margin-top: 30px;
+	margin-top: 30px;
 }
 
 .post-index-flex { 
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
 }
 
 .post-index-each {
-  margin: 50px 0 50px 0;
+	margin: 50px 0 50px 0;
 }
 
 .post-index-user {
-  margin: 0 45px 0 60px;
-    
+	margin: 0 45px 0 60px;
+		
 }
 
 .post-index-head {
-  letter-spacing:10px; 
-  font-size:35px;
-  padding: 3px 5px;
-  border-left: solid 5px #00F9A9	
+	letter-spacing:10px; 
+	font-size:35px;
+	padding: 3px 5px;
+	border-left: solid 5px #00F9A9	
 }
 
 .post-index-name {
-  -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  margin-left: 20px;
-  font-size: 15px;
+	-ms-writing-mode: tb-rl;
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	margin-left: 20px;
+	font-size: 15px;
 }
 
 .post-index-title {
-  margin-top: 0px;
-  letter-spacing:5px;
-  background: linear-gradient(transparent 70%, #B1F9D0 70%);
+	margin-top: 0px;
+	letter-spacing:5px;
+	background: linear-gradient(transparent 70%, #B1F9D0 70%);
 }
 
 .post-index-content {
-  margin-top:10px;
+	margin-top:10px;
 }
 
 .post-show-name {
-  display: inline-block;
+	display: inline-block;
 }
 
 .post-show-tag {
-  display: inline-block;
+	display: inline-block;
 }
 
 .flexcontainer {
-  display: flex;
+	display: flex;
 }
 
 .show-post-name {
-  margin: 15px 40px 0 25px;
-  font-size: 35px;
+	margin: 15px 40px 0 25px;
+	font-size: 35px;
 }
 
 .show-post-tag {
-  margin: 10px 3px 0 0;
+	margin: 10px 3px 0 0;
 }
 
 .post-show-image {
-  margin: 50px 0 50px 0;
+	margin: 50px 0 50px 0;
 }
 
 .show-post-title {
-  font-size: 35px;
-  border-bottom: double 5px #93FFAB;
-  margin-top: -35px;
+	font-size: 35px;
+	border-bottom: double 5px #93FFAB;
+	margin-top: -35px;
 }
 
 .show-post-content {
-  font-size: 20px;
-  margin: 22px 0 100px 5px;
+	font-size: 20px;
+	margin: 22px 0 100px 5px;
 }
 
 .post-show-return {
-  margin: 40px 50px 0 0;
-  font-size: 26px;
+	margin: 40px 50px 0 0;
+	font-size: 26px;
 }
 
 .post-show-link {
-  margin: 0 15px 50px 15px;
+	margin: 0 15px 50px 15px;
 }
 
 .btn-success {
-  margin: 0 5px 0 1px;
+	margin: 0 5px 0 1px;
 }
 
 #map {
-  width: 500px;
-  height: 370px;
+	width: 500px;
+	height: 370px;
 }
-    
+		
 .post-map {
-  margin: 50px 0 0 30px;
+	margin: 50px 0 0 30px;
 }
 
 .post-show-image-map {
-  margin-top: 40px;
+	margin-top: 40px;
 }
 
 .tag-list {
-  position: relative;
-  margin-top: 50px;
-  padding: 15px 15px 15px 15px;
-  border: solid 2px;
-  border-radius: 8px;
+	position: relative;
+	margin-top: 50px;
+	padding: 15px 15px 15px 15px;
+	border: solid 2px;
+	border-radius: 8px;
 }
 
 .tag-list-head {
-  position: absolute;
-  display: inline-block;
-  top: -13px;
-  left: 10px;
-  padding: 0 9px;
-  line-height: 1;
-  font-size: 22px;
-  background: #FFF;
+	position: absolute;
+	display: inline-block;
+	top: -13px;
+	left: 10px;
+	padding: 0 9px;
+	line-height: 1;
+	font-size: 22px;
+	background: #FFF;
 }
 
 .tags {
-  margin: 5px 5px 5px 0;
+	margin: 5px 5px 5px 0;
 }
 
 .index-post-tag {
-  margin-top: 5px;
+	margin-top: 5px;
 }
 
 .post-show-newlink {
-  font-size: 25px;
-  margin-left: 60px;
-  margin-right: -700px;
+	font-size: 25px;
+	margin-left: 60px;
+	margin-right: -700px;
 }
 
 .post-show-favoritelink {
-  font-size :22px;
-  margin: 4px -145px 0 180px;
+	font-size :22px;
+	margin: 4px -145px 0 180px;
 }
 
 .post-show-newarrivallink {
-  font-size :22px;
-  margin: 4px -145px 0 190px;
+	font-size :22px;
+	margin: 4px -145px 0 190px;
 }
 
 .flex-container {
-  display: flex;
+	display: flex;
 }
 
 #target {
-  height: 370px;
-  width: 500px;
-  margin: 50px 0 0 30px;
+	height: 370px;
+	width: 500px;
+	margin: 50px 0 0 30px;
 }
 
 .btn-default {
-  background-color: black;
+	background-color: black;
 }
 
 #index-post-tag {
-  margin-bottom: 50px;
+	margin-bottom: 50px;
 }
 
 .post-index-page {
-  margin: 0 0 0 58%;
-  font-size: 20px;
-  color: black;
-  margin-top: -30px;
+	margin: 0 0 0 58%;
+	font-size: 20px;
+	color: black;
+	margin-top: -30px;
 }
 
 .post-index-userimage img {
-  border-radius: 50%;
-  width:  62px;
-  height: 62px;
-  margin-right: 20px;
+	border-radius: 50%;
+	width:  62px;
+	height: 62px;
+	margin-right: 20px;
 }
 
 .post-new-text p {
-  margin: 0; 
-  padding: 0;
+	margin: 0; 
+	padding: 0;
 }
 
 .post-new-title {
-  margin-top: 20px;
-  font-size: 23px;
-  color: #008080;
+	margin-top: 20px;
+	font-size: 23px;
+	color: #008080;
 }
 
 .post-new-titleform {
-  width: 560px;
-  height: 35px;
+	width: 560px;
+	height: 35px;
 }
 
 .post-new-title-tag {
-  font-size: 18px;
+	font-size: 18px;
 }
 
 .post-new-button {
-  width: 560px;
-  height: 45px;
-  background: #007700;
+	width: 560px;
+	height: 45px;
+	background: #007700;
 }
 
 .post-new-button-margin {
-  margin-top: 60px;
-  margin-bottom: 50px;
+	margin-top: 60px;
+	margin-bottom: 50px;
 }
 
 .post-new-head {
-  margin-top: 50px;
-  border-bottom: double 3px;
-  position: relative;
-  border: 1px solid #004400; 
-  margin: 2em auto;
-  padding: 20px 15px 10px 20px;
-  z-index: 0;
-  letter-spacing: 8px;
+	margin-top: 50px;
+	border-bottom: double 3px;
+	position: relative;
+	border: 1px solid #004400; 
+	margin: 2em auto;
+	padding: 20px 15px 10px 20px;
+	z-index: 0;
+	letter-spacing: 8px;
 }
 
 .post-new-head:before,
 .post-new-head:after {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 100%;
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
 }
-    
+		
 .post-new-head:before {
-  border: 1px solid #005500; 
-  bottom: -4px;
-  right: -4px;
-  z-index: 1;
+	border: 1px solid #005500; 
+	bottom: -4px;
+	right: -4px;
+	z-index: 1;
 }
-    
+		
 .post-new-head:after {
-  border: 1px solid #007700; 
-  bottom: -7px;
-  right: -7px;
-  z-index: 2;
+	border: 1px solid #007700; 
+	bottom: -7px;
+	right: -7px;
+	z-index: 2;
 }
 
 .post-show-userimage img{
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
 .edit-profile {
-  width: 200px;
-  height: 100px;
+	width: 200px;
+	height: 100px;
+}
+
+.want-to-login {
+	padding: 8px 0 6px 20px;
+	font-size: 18px;
+	margin: 5px 0 0 95px;
+	border-bottom: solid 2px #FF97C2;
+}
+
+.want-to-login-btn {
+	border-bottom: solid 1px;
+	margin-left: 10px;
+	font-size: 20px;
 }

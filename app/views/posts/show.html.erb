@@ -91,7 +91,7 @@
 				<% end %>
 				<% if @user.id == current_user.id or current_user.admin == true %>
 					<div class="post-show-link">
-						<%= link_to "投稿を削除する", destroy_post_path, method: :delete, data: {confirm: "投稿を削除してよろしいですか？"}, class: 'btn btn-default' %>                    
+						<%= link_to "投稿を削除する", destroy_post_path, method: :delete, data: {confirm: "投稿を削除してよろしいですか？"}, class: 'btn btn-default' %>
 					</div>
 				<% end %>
 			</div>
