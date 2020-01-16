@@ -14,13 +14,13 @@ https://asigaya.tokyo
 ![asigaya.post.png](https://user-images.githubusercontent.com/55277210/72257099-1ff94400-364e-11ea-8994-824f987c39d3.png)
 
 ## 機能
-・ログイン機能
-・管理者機能
-・投稿機能
-・お気に入り機能
-・タグ機能
-・問い合わせ機能(Action Mailer)
-・地図表示機能
+・ログイン機能  
+・管理者機能  
+・投稿機能  
+・お気に入り機能  
+・タグ機能  
+・問い合わせ機能(Action Mailer)  
+・地図表示機能  
 ・位置情報機能
 
 ## 使い方
