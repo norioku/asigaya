@@ -3,8 +3,7 @@
 <% else %>
 	<header class="header-sub">
 <% end %>
-	
-	
+
 <h1 class = "logo-head">
 	<%= link_to root_path, class: "logo-link" do %>
 		<% if params[:controller] == "homes" %>
@@ -38,6 +37,13 @@
 						<% end %>
 					</div>
 				</li>
+				<li class = "nav-item">
+					<div class = "nav-link-icon">
+						<%= link_to user_path(current_user) do %>
+						<i class="fas fa-user"></i>
+						<% end %>
+					</div>
+				</li>
 			<% end %>
 		<% end %>
 				
@@ -48,12 +54,26 @@
 				<% end %>
 			</div>
 		</li>
+		<li class = "nav-item">
+			<div class = "nav-link-icon">
+				<%= link_to destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？"} do %>
+				<i class="fas fa-sign-out-alt"></i>
+				<% end %>
+			</div>
+		</li>
 					
 		<% unless current_page?(new_user_inquiry_path(current_user)) %>
 			<li class = "nav-item">
 				<div class = "nav-link">
 					<%= link_to new_user_inquiry_path(current_user) do %>
 					お問い合わせ
+					<% end %>
+				</div>
+			</li>
+			<li class = "nav-item">
+				<div class = "nav-link-icon">
+					<%= link_to new_user_inquiry_path(current_user) do %>
+					<i class="fas fa-info"></i>
 					<% end %>
 				</div>
 			</li>
@@ -101,6 +121,11 @@
 					<% end %>
 				</div>
 			</li>
+			<li class = "nav-item">
+				<div class = "nav-link-icon">
+					<%= link_to "新規登録", new_user_registration_path, class: 'signin-smartphone' %>
+				</div>
+			</li>
 		<% end %>
 		<% unless current_page?(new_user_session_path) %>
 			<li class = "nav-item">
@@ -110,7 +135,11 @@
 					<% end %>
 				</div>
 			</li>
+			<li class = "nav-item">
+				<div class = "nav-link-icon">
+					<%= link_to "ログイン", new_user_session_path, class: 'login-smartphone' %>
+				</div>
+			</li>
 		<% end %>
-	</ul>
 	<% end %>
 </nav>

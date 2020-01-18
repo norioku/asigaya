@@ -15,13 +15,13 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-9">
+		<div class="col-xs-9">
 			<% @all_ranks.each.with_index(1) do |rank,i| %>
 				<div class="row post-index-each">
-					<div class="col-lg-3 col-xs-offset-1 post-index-user-image">
+					<div class="col-xs-3 col-xs-offset-1 post-index-user-image">
 						<%= attachment_image_tag rank, :image, :fill, 200, 200, fallback: "no-image.png", size:'170x200' %>
 					</div>
-					<div class="col-lg-1 post-index-user">
+					<div class="col-xs-1 post-index-user">
 						<div class="post-index-name">
 							<%= link_to user_path(rank.user.id) do %>
 							<p><%= rank.user.name %></p>
@@ -31,7 +31,7 @@
 							<%= attachment_image_tag rank.user, :image, :fill, 60, 60, fallback: "no-image.png", size:'60x60' %>
 						</div>
 					</div>
-					<div class="col-lg-5">
+					<div class="col-xs-5">
 						<h2 class="post-index-title"><%= rank.title %></h2>
 						<% tags = rank.tag_list %>
 						<% tags.each do |tag| %>
@@ -41,7 +41,7 @@
 						<% end %>
 						<p class="post-index-content"><%= rank.content.truncate(20) %></p>
 						<div class="flex-container">
-							<h1>
+							<h1 class="post-index-showlink">
 								<%= link_to post_show_path(rank.id) do %>
 								<i class="fas fa-chevron-circle-right fa-second"></i>
 								<% end %>
@@ -55,7 +55,7 @@
 				<%= paginate @all_ranks %>
 			</div>
 		</div>
-		<div class="col-lg-3 tag-list">
+		<div class="col-xs-3 tag-list">
 			<span class="tag-list-head">タグで検索</span>
 			<% @tags.each do |tag| %>
 				<%= link_to tag_path(tag.name) do %>
