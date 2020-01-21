@@ -305,7 +305,7 @@
 .post-index-title {
 	margin-top: 0rem;
 	letter-spacing: 0.2rem;
-	background: linear-gradient(transparent 70%, #B1F9D0 70%);
+	background: linear-gradient(transparent 70%, #B1F9D0 20%);
 	font-size: 15px;
 	margin: 0px!important;
 }
@@ -554,8 +554,7 @@
 	font-size: 1.5rem;
 }
 
-.fa-chevron-circle-right:before {
-	content: "\f138";
+.fa-post {
 	color: black;
 }
 
@@ -611,5 +610,4 @@ button.btn.btn-default-green.show-post-tag {
 	width: 20rem;
 	margin: 2rem 0 0 1rem;
 }
-
 }
