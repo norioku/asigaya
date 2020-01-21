@@ -4,12 +4,12 @@
 			<div class="col-xs-4 post-index-head">阿佐ヶ谷広場</div>
 				<div class="col-xs-3 post-show-newarrivallink">新着順でみる
 					<%= link_to posts_path do %>
-					<i class="fas fa-chevron-circle-right fa-second"></i>
+					<i class="fas fa-chevron-circle-right fa-post"></i>
 					<% end %>
 				</div>
 				<div class="col-xs-4 post-show-favorite-newlink">新しい投稿がしたい！
 				<%= link_to post_new_path do %>
-				<i class="fas fa-chevron-circle-right fa-second"></i>
+				<i class="fas fa-chevron-circle-right fa-post"></i>
 				<% end %>
 				</div>
 		</div>
@@ -43,7 +43,7 @@
 						<div class="flex-container">
 							<h1 class="post-index-showlink">
 								<%= link_to post_show_path(rank.id) do %>
-								<i class="fas fa-chevron-circle-right fa-second"></i>
+								<i class="fas fa-chevron-circle-right fa-post"></i>
 								<% end %>
 							</h1>
 							<%= render 'favorites/favorite', post: rank %> 

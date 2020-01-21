@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-xs-8 col-xs-offset-1">
+		<div class="col-lg-8 col-xs-11 col-xs-offset-1">
 			<div class="flexcontainer">
 				<div class="post-show-userimage">
 					<%= attachment_image_tag @user, :image, :fill, 80, 80, fallback: "no-image.png" ,size:'80x80'%>
@@ -18,7 +18,9 @@
 						</div>
 						<% end %>
 					<% end %>
+				<div class="show-favorite">
 				<%= render 'favorites/favorite', post: @post %> 
+				</div>
 			</div>
 		</div>
 		<div class="col-xs-3">
@@ -53,7 +55,7 @@
 									center: results[0].geometry.location,
 									zoom: 18
 									});
-									var contentString = '店名：<%= @post.location %>';
+									var contentString = '場所：<%= @post.location %>';
 									var infowindow = new google.maps.InfoWindow({
 									});
 									
@@ -62,7 +64,6 @@
 									map: map,
 									animation: google.maps.Animation.DROP
 									});
-									//google.maps.event.addListener(marker,‘click’, (function(marker,content,infowindow) {
 									google.maps.event.addListener(marker, 'click',(function(marker,content,infowindow) {
 									  return function(){
 										infowindow.setContent(content);

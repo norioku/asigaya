@@ -2,17 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .home-title{
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:white;
+	color: white;
 	font-weight: 500;
-	text-align:right;
-	float:right;
-	font-size:45px;
-	letter-spacing:30px;
+	text-align: right;
+	float: right;
+	font-size: 45px;
+	letter-spacing: 30px;
 	margin: 35px 40px 0 0;
 }
 
@@ -23,8 +22,8 @@
 	color: block;
 	font-weight: 100;
 	float: right;
-	font-size:40px;
-	letter-spacing:25px;
+	font-size: 40px;
+	letter-spacing: 25px;
 	margin: 35px 40px 0 0;
 }
 
@@ -32,63 +31,63 @@
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:white;
+	color: white;
 	font-weight: 100;
 	float: right;
-	font-size:40px;
-	letter-spacing:25px;
+	font-size: 40px;
+	letter-spacing: 25px;
 	margin: 35px 40px 0 0;
 }
 
 .home-about{
-	width:100%;
-	height:650px;
+	width: 100%;
+	height: 650px;
 	background-size: cover;
 }
 
 .home-post-text{
-	float:right;
-	width:30%;
+	float: right;
+	width: 30%;
 }
 
 .home-post-image{
 	background: image-url("top2.jpg");
-	width:70%;
-	height:570px;
+	width: 70%;
+	height: 570px;
 	background-size: cover;
-	margin-top:40px;
+	margin-top: 40px;
 	margin-bottom: 40px;
-	float:left;
+	float: left;
 }
 
 .home-location-infomation-left{
 	background: image-url("top5.jpg");
-	width:50%;
-	height:650px;
+	width: 50%;
+	height: 650px;
 	background-size: cover;
-	float:left;
+	float: left;
 }
 
 .home-location-infomation-right{
 	background: image-url("top4.jpg");
-	width:50%;
-	height:650px;
+	width: 50%;
+	height: 650px;
 	background-size: cover;
-	float:right;
+	float: right;
 }
 
 .home-text {
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:white;
-	float:right;
-	font-size:22px;
+	color: white;
+	float: right;
+	font-size: 22px;
 	font-weight: 200;
 	margin: 260px 30px 0 0;
 	line-height: 2em;
 	text-decoration: none;
-	letter-spacing:3px;
+	letter-spacing: 3px;
 }
 
 .text-second{
@@ -97,26 +96,26 @@
 	text-orientation: upright;
 	color:black;
 	float:right;
-	font-size:22px;
+	font-size: 22px;
 	font-weight: 200;
 	margin: 260px 30px 0 0;
 	line-height: 2em;
 	text-decoration: none;
-	letter-spacing:3px;
+	letter-spacing: 3px;
 }
 
 .text-third {
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:white;
-	float:right;
-	font-size:22px;
+	color: white;
+	float: right;
+	font-size: 22px;
 	font-weight: 200;
 	margin: 280px 30px 0 0;
 	line-height: 2em;
 	text-decoration: none;
-	letter-spacing:3px;
+	letter-spacing: 3px;
 }
 
 .title-third-br {
@@ -138,22 +137,22 @@
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:white;
-	float:right;
-	font-size:22px;
+	color: white;
+	float: right;
+	font-size: 22px;
 	font-weight: 200;
 	margin: 140px 30px 0 0;
 	line-height: 2em;
 	text-decoration: none;
-	letter-spacing:3px;
+	letter-spacing: 3px;
 }
 	
 .home-post-image{
 	background: image-url("top2.jpg");
-	width:65%;
-	height:570px;
+	width: 65%;
+	height: 570px;
 	background-size: cover;
-	margin-top:40px;
+	margin-top: 40px;
 	margin-bottom: 40px;
 }
 	
@@ -161,13 +160,13 @@
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:black;
-	font-size:22px;
+	color: black;
+	font-size: 22px;
 	font-weight: 200;
 	margin: -300px 110px 0 0;
 	line-height: 2em;
 	text-decoration: none;
-	letter-spacing:3px;
+	letter-spacing: 3px;
 }
 }
 
@@ -176,22 +175,22 @@
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:white;
-	float:right;
-	font-size:22px;
+	color: white;
+	float: right;
+	font-size: 22px;
 	font-weight: 200;
 	margin: 140px 30px 0 0;
 	line-height: 2em;
 	text-decoration: none;
-	letter-spacing:3px;
+	letter-spacing: 3px;
 }
 	
 .home-post-image{
 	background: image-url("top2.jpg");
-	width:60%;
-	height:570px;
+	width: 60%;
+	height: 570px;
 	background-size: cover;
-	margin-top:40px;
+	margin-top: 40px;
 	margin-bottom: 40px;
 }
 	
@@ -199,20 +198,20 @@
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:black;
-	font-size:22px;
+	color: black;
+	font-size: 22px;
 	font-weight: 200;
 	margin: -300px 110px 0 0;
 	line-height: 2em;
 	text-decoration: none;
-	letter-spacing:3px;
+	letter-spacing: 3px;
 }
 }
 
 @media screen and (max-width:425px) {  
 .home-about{
-	width:100%;
-	height:600px;
+	width: 100%;
+	height: 600px;
 	background-size: cover;
 }
 	
@@ -259,8 +258,8 @@
 	color: white;
 	font-weight: 500;
 	float: right;
-	font-size:40px;
-	letter-spacing:25px;
+	font-size: 40px;
+	letter-spacing: 25px;
 	margin: -440px 30px 0 0;
 }
 	
@@ -269,45 +268,45 @@
 	writing-mode: vertical-rl;
 	text-orientation: upright;
 	color:white;
-	font-size:22px;
+	font-size: 22px;
 	font-weight: 500;
 	line-height: 2.2em;
 	text-decoration: none;
-	letter-spacing:4px;
+	letter-spacing: 4px;
 	margin: -340px 120px 0 0;
 }
 	
 .home-post-text{
-	float:right;
-	width:0%;
+	float: right;
+	width: 0%;
 	margin: 550px 0 0 0;
 }
 	
 .home-location-infomation-left{
 	background: image-url("top5.jpg");
-	width:0%;
-	height:500px;
+	width: 0%;
+	height: 500px;
 	background-size: cover;
-	float:left;
+	float: left;
 }
 
 .home-location-infomation-right{
 	background: image-url("top4.jpg");
-	width:100%;
-	height:570px;
+	width: 100%;
+	height: 570px;
 	background-size: cover;
-	float:right;
+	float: right;
 }
 
 .title-third{
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:white;
+	color: white;
 	font-weight: 500;
 	float: right;
-	font-size:36px;
-	letter-spacing:25px;
+	font-size: 36px;
+	letter-spacing: 25px;
 	margin: 50px 27px 0 0;
 }
 
@@ -315,15 +314,15 @@
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:white;
-	font-size:22px;
+	color: white;
+	font-size: 22px;
 	font-weight: 500;
 	margin: 190px 35px 0 55px;
 	line-height: 2.2em;
 	text-decoration: none;
-	letter-spacing:3px;
+	letter-spacing: 3px;
 }
-	
+
 .title-third-br {
 	margin-top: 188px;
 }

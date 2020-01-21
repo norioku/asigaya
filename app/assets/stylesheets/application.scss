@@ -236,7 +236,7 @@ ul, ol {
 }
 
 .fa-second {
-	color:black;
+	color: black;
 }
 
 .fa-second:hover {
@@ -245,7 +245,7 @@ ul, ol {
 }
 
 .fa-third {
-	color:white;
+	color: white;
 }
 
 .fa-third:hover {
@@ -368,19 +368,25 @@ ul, ol {
 
 .admin-home, .nav-link, .footer-nav-item, .footer-nav-item-second, .logo-footer {display:none}
 
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
 .fa-second {
 	color:white;
 	margin-top: -50px;
 }
 	
 .fa-third {
-	color:white;
+	color: white!important;
 	margin: 460px -45px 0 0;
 	float: right;
 }
 	
 .nav-link-icon {
-	display:block;
+	display: block;
 }
 	
 .fa-user:before {
@@ -451,5 +457,9 @@ footer {
 
 .fa-third {
 	color: white!important;
+}
+
+.wrap {
+	overflow: hidden;
 }
 }

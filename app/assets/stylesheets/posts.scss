@@ -279,6 +279,9 @@
 }
 
 @media screen and (max-width:425px) {  
+
+.post-show-return {display:none}
+
 .post-index-user {
 	margin: 0 2rem 0 2rem;
 }
@@ -302,7 +305,7 @@
 .post-index-title {
 	margin-top: 0rem;
 	letter-spacing: 0.2rem;
-	background: linear-gradient(transparent 70%, #B1F9D0 70%);
+	background: linear-gradient(transparent 70%, #B1F9D0 20%);
 	font-size: 15px;
 	margin: 0px!important;
 }
@@ -325,32 +328,34 @@
 }
 
 .show-post-name {
-	margin: 1.5rem 4rem 0 2.5rem;
-	font-size: 3.5rem;
+	margin: 2.7rem 4rem 0 0.8rem;
+	font-size: 1.7rem;
 }
 
 .show-post-tag {
 	margin: 1rem 0.3rem 0 0;
 }
 
-.post-show-image {
-	margin: 5rem 0 5rem 0;
+.post-show-image img{
+	margin-top: -3rem;
+	width: 140px!important;
+	height: 130px!important;
 }
 
 .show-post-title {
-	font-size: 3.5rem;
-	border-bottom: double 0.5rem #93FFAB;
+	font-size: 2.5rem;
+	border-bottom: double 0.3rem #93FFAB;
 	margin-top: -3.5rem;
 }
 
 .show-post-content {
-	font-size: 2rem;
-	margin: 2.2rem 0 10rem 0.5rem;
+	font-size: 1.7rem;
+	margin: 0.5rem 0 3rem 0rem;
 }
 
 .post-show-return {
-	margin: 4rem 5rem 0 0;
-	font-size: 2.6rem;
+	margin: 0;
+	font-size: 1rem;
 }
 
 .post-show-link {
@@ -481,7 +486,7 @@
 }
 
 .post-new-button {
-	width: 56rem;
+	width: 35rem;
 	height: 4.5rem;
 	background: #007700;
 }
@@ -492,11 +497,10 @@
 }
 
 .post-new-head {
-	margin-top: 5rem;
 	border-bottom: double 0.3rem;
 	position: relative;
 	border: 0.1rem solid #004400; 
-	margin: 0.2rem auto;
+	margin-top: 2rem ;
 	padding: 2rem 1.5rem 1rem 2rem;
 	z-index: 0;
 	letter-spacing: 0.8rem;
@@ -526,6 +530,9 @@
 
 .post-show-userimage img{
 	border-radius: 50%;
+	margin: 2rem 0 0 0rem!important;
+	width: 4rem!important;
+	height: 4rem!important;
 }
 
 .edit-profile {
@@ -547,14 +554,19 @@
 	font-size: 1.5rem;
 }
 
-.fa-chevron-circle-right:before {
-	content: "\f138";
+.fa-post {
 	color: black;
 }
 
+img.attachment.user.image {
+	width: 30px;
+	height: 30px;
+	margin-left: -0.5rem;
+}
+
 img.attachment.post.image {
-	width: 68px!important;
-	height: 80px!important;
+	width: 68px;
+	height: 80px;
 }
 
 img.attachment.user.image.fallback {
@@ -562,6 +574,7 @@ img.attachment.user.image.fallback {
 	height: 30px;
 	margin-left: -0.5rem;
 }
+
 .btn {
 	padding: 0 0.3rem 0 0.3rem!important;
 	font-size: 7px;
@@ -582,4 +595,19 @@ button.btn.btn-default.btn-sm.index-post-tag {
 	margin: 2rem 0 2rem 0;
 }
 
+button.btn.btn-default-green.show-post-tag {
+	margin: 1.8rem 0 0 0rem;
+	font-size: 5px;
+}
+
+.show-favorite {
+	margin: 2.4rem -5rem 0 0;
+	font-size: 7px;
+}
+
+#target {
+	height: 13rem;
+	width: 20rem;
+	margin: 2rem 0 0 1rem;
+}
 }

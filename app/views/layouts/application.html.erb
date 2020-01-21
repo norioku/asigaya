@@ -14,10 +14,12 @@
 	</head>
 
 	<body class="<%= controller.controller_path%> <%= controller.action_name%>">
+		<div class="wrap">
 		<%= render "layouts/header" %>
 	
 		<%= yield %>
 	
 		<%= render "layouts/footer" %>
+		</div>
 	</body>
 </html>

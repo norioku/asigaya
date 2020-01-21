@@ -3,102 +3,155 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .user-show {
-  height:700px;
+	height:700px;
 }
 
 .user-show-username {
-  text-align: center;
-  font-size: 45px;
+	text-align: center;
+	font-size: 45px;
 
 }
 
 .user-show-user {
-  padding: 0.5em 1em;
-  margin: 2em 0;
-  border: double 5px #66CDAA;
-  width: 300px;
-  margin: 80px 0 0 0;
+	padding: 0.5em 1em;
+	margin: 2em 0;
+	border: double 5px #66CDAA;
+	width: 300px;
+	margin: 80px 0 0 0;
 }
 
 .user-show-userimage {
-  text-align: center;
-  margin: 10px 0 -10px 0;
+	text-align: center;
+	margin: 10px 0 -10px 0;
 }
 
 .user-show-closelink {
-  text-align: center;
-  margin: 10px 0 5px 0;
+	text-align: center;
+	margin: 10px 0 5px 0;
 }
 
 .user-show-editlink {
-  margin: 0 0 10px 0;
+	margin: 0 0 10px 0;
 }
 
 .user-show-favoritelink {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .user-show-posthead {
-  margin: 30px 20px 10px 40px;
-  border-bottom: solid 1px black;
+	margin: 30px 20px 10px 40px;
+	border-bottom: solid 1px black;
 }
 
 .user-unsubscribe-head {
-  text-align: center;
-  border-bottom: double 1px black;
-  margin-top: 50px;
+	text-align: center;
+	border-bottom: double 1px black;
+	margin-top: 50px;
 }
 
 .user-unsubscribe-text {
-  margin: 50px 0 0 0;
-  text-align: center;
-  font-size: 22px;
+	margin: 50px 0 0 0;
+	text-align: center;
+	font-size: 22px;
 }
 
 .user-unsubscribe-link {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  margin: 30px 0 50px 190px;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	margin: 30px 0 50px 190px;
 }
 
 .user-unsubscribe-showlink {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
 .user-show-userprofile {
-  font-size: 16px;
-  margin: 20px 30px 25px 30px;
+	font-size: 16px;
+	margin: 20px 30px 25px 30px;
 }
 
 .user-exit {
-  padding:30px 0 100px 0;
+	padding:30px 0 100px 0;
 }
 
 .user-edit {
-  margin-bottom: 50px;
+	margin-bottom: 50px;
 }
 
 .devise_form-edit {
-  width:355px;
-  height:30px;
-  margin-bottom:20px;
+	width:355px;
+	height:30px;
+	margin-bottom:20px;
 }
 
 .user-edit-head {
-  margin-bottom: 50px;
-  border-bottom: double 3px;
+	margin-bottom: 50px;
+	border-bottom: double 3px;
 }
 
 .user-edit-button {
-  width: 355px;
-  margin-bottom: 10px;
+	width: 355px;
+	margin-bottom: 10px;
 }
 
 .post-index-userimage {
-  border-radius: 50%;
-  width:  62px;
-  height: 62px;
-  margin-right: 20px;
+	border-radius: 50%;
+	width:  62px;
+	height: 62px;
+	margin-right: 20px;
+}
+
+@media screen and (max-width:425px) {  
+
+.user-show-userimage img{
+	width: 150px!important;
+	height: 150px!important;
+	text-align: center;
+	margin: 10px 0 -10px 0;
+}
+
+.user-show-username {
+	font-size : 3rem;
+	margin-top: 3rem;
+}
+
+.user-show-posthead {
+	font-size: 2rem;
+	margin: 30px 20px 10px 40px;
+	border-bottom: solid 1px black;
+}
+
+.fa-user-showlink {
+	font-size: 2.5rem;
+}
+
+.user-show-user {
+	width: 100%;
+	padding: 0.5em 1em;
+	margin: 2rem 0;
+	border: double 5px #66CDAA;
+}
+
+.user-unsubscribe-link {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	margin: 20px 0 50px 80px;
+}
+
+.user-unsubscribe-head {
+	text-align: center;
+	border-bottom: double 1px black;
+	margin-top: 50px;
+	font-size: 3rem;
+}
+
+.user-unsubscribe-text {
+	margin: 20px 0 0 0;
+	text-align: center;
+	font-size: 1.5rem;
+}
 }
