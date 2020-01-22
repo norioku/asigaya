@@ -47,9 +47,11 @@
 								<% end %>
 								<p class="post-index-content"><%= post.content.truncate(25) %></p>
 								<div class="flex-container">
+									<h1>
 									<%= link_to post_show_path(post.id) do %>
-										<i class="fas fa-chevron-circle-right fa-user-showlink"></i>
+									<i class="fas fa-chevron-circle-right fa-second"></i>
 									<% end %>
+									</h1>
 									<%= render 'favorites/favorite', post: post %> 
 								</div>
 						</div>

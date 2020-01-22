@@ -91,7 +91,7 @@ html {
 
 .logo-link {
 	align-items: center;
-	font-size: 30px;
+	font-size: 3rem;
 }
 
 .logo-link:hover {
@@ -102,7 +102,7 @@ html {
 .nav-link {
 	display: inline-block;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 2rem;
 	margin-right: 30px;
 	margin-bottom: 0px;
 	cursor: pointer;
@@ -112,7 +112,7 @@ html {
 .nav-link-sub {
 	display: inline-block;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 2rem;
 	margin-right: 30px;
 	margin-bottom: 0px;
 	cursor: pointer;
@@ -162,7 +162,7 @@ footer {
 
 .footer-logo-link {
 	align-items: center;
-	font-size: 30px;
+	font-size: 3rem;
 	margin: -100px 0 0 0;
 }
 
@@ -172,7 +172,7 @@ footer {
 }
 
 .footer-nav-link {
-	font-size: 20px;
+	font-size: 2rem;
 	font-weight: bold;
 }
 
@@ -194,14 +194,14 @@ footer {
 .footer-text {
 	text-align: center;
 	margin: 40px 0 0 -300px;
-	font-size: 17px;
+	font-size: 1.7rem;
 }
 
 .iine__button{
 	background: linear-gradient(to right, #FFFFCC, #CCFF99);
 	line-height: 42px;
 	color: #6d3701;
-	font-size: 18px;
+	font-size: 1.8rem;
 	display: inline-block;
 	padding: 0 18px;
 	margin: 20px 0 0 45px;
@@ -275,18 +275,18 @@ ul, ol {
 }
 
 .sign {
-	padding:30px 0 100px 0;
+	padding: 30px 0 100px 0;
 }
 
 .devise_form {
-	width:355px;
-	height:30px;
-	margin-bottom:10px;
+	width: 355px;
+	height: 30px;
+	margin-bottom: 10px;
 }
 
 .sign-button {
-	margin-bottom:15px;
-	margin-top:30px;
+	margin-bottom: 15px;
+	margin-top: 30px;
 	width: 350px;
 	background: #E6FFE9;
 }
@@ -311,7 +311,7 @@ ul, ol {
 
 .nav-link-icon {display:none}
 
-@media screen and (max-width:1024px) {  
+@media screen and (max-width: 1024px) {  
 .logo-footer {
 	background: image-url("logo.top.png");
 	width: 80px;
@@ -334,7 +334,7 @@ ul, ol {
 
 .footer-logo-link {
 	align-items: center;
-	font-size: 30px;
+	font-size: 3rem;
 	margin: 50px 10px 0 -50px;
 }
 
@@ -351,11 +351,11 @@ ul, ol {
 .footer-text {
 	text-align: center;
 	margin: -30px 0 80px 420px;
-	font-size: 17px;
+	font-size: 1.7rem;
 }
 }
 
-@media screen and (max-width:768px) {  
+@media screen and (max-width: 768px) {  
 	.footer-nav-list {
 	width: 55%;
 	height: 80px;
@@ -364,7 +364,7 @@ ul, ol {
 }
 }
 
-@media screen and (max-width:425px) {  
+@media screen and (max-width: 425px) {  
 
 .admin-home, .nav-link, .footer-nav-item, .footer-nav-item-second, .logo-footer {display:none}
 
@@ -375,7 +375,7 @@ ul, ol {
 }
 
 .fa-second {
-	color:white;
+	color: white;
 	margin-top: -50px;
 }
 	
@@ -390,37 +390,37 @@ ul, ol {
 }
 	
 .fa-user:before {
-	font-size: 30px;
+	font-size: 3rem;
 	margin-left: 15px;
 	color: #CCCCCC
 }
 	
 .fa-sign-out-alt:before {
-	font-size: 30px;
+	font-size: 3rem;
 	margin-left: 45px;
 	color: #CCCCCC
 }
 	
 .fa-info:before {
-	font-size: 30px;
+	font-size: 3rem;
 	margin-left: 45px;
 	color: #CCCCCC
 }
 	
 .fa-sign-in-alt:before {
-	font-size: 40px;
+	font-size: 4rem;
 	margin: 20px 0 0 20px;
 	color: #CCCCCC
 }
 	
 .signin-smartphone {
-	font-size: 17px; 
+	font-size: 1.7rem; 
 	margin-left: -10px;
 	color: #CCCCCC
 }
 	
 .login-smartphone {
-	font-size: 15px; 
+	font-size: 1.5rem; 
 	margin-left: 30px;
 	color: #CCCCCC
 }
@@ -428,7 +428,7 @@ ul, ol {
 .footer-text {
 	text-align: center;
 	margin: -150px 0 0 0;
-	font-size: 17px;
+	font-size: 1.7rem;
 }
 	
 footer {
@@ -449,14 +449,6 @@ footer {
 	margin: 0rem 0 -1rem 1rem;
 	border-radius: 30px;
 	font-weight: bold;
-}
-
-.fa-second {
-	color: white!important;
-}
-
-.fa-third {
-	color: white!important;
 }
 
 .wrap {

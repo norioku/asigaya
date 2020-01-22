@@ -25,7 +25,7 @@
 
 .user-inquiry-text {
 	padding: 10px 0 50px 0;
-	font-size : 20px;
+	font-size : 2rem;
 }
 
 .center-block {
@@ -39,23 +39,23 @@
 }
 
 .inquiry-group {
-	font-size: 22px;
+	font-size: 2.2rem;
 	display: flex;
 }
 
 .inquiry-group-item {
-	font-size: 22px;
+	font-size: 2.2rem;
 	flex-diretion: row;
 }
 
 .f-inquiries {
-	font-size: 22px;
+	font-size: 2.2rem;
 	flex-diretion: row;
 	flex-wrap:wrap;
 }
 
 .f-item-a {
-	font-size: 22px;
+	font-size: 2.2rem;
 	flex-diretion: row;
 	font-weight: bold;
 }
@@ -76,7 +76,7 @@
 	margin-bottom: 40px;
 }
 
-@media screen and (max-width:425px) {  
+@media screen and (max-width: 425px) {  
 
 .use-inquiry-newhead {
 	font-size: 2.7rem;

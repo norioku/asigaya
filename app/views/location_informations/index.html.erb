@@ -13,31 +13,33 @@
 			</div>
 			<div class="col-xs-2">
 				<div class="location-infomation-head">LE<span class="location-infomation-head-T">T'</span><span class="location-infomation-head-line">S GO<br></span>
-				<span class="location-infomation-head-br"><span class="location-infomation-head-line-second">阿佐ヶ谷</span></span></div>
+				<span class="location-infomation-head-br"><span class="location-infomation-head-line-second">阿佐ヶ谷</span></span>
+				</div>
 			</div>
 			<div class="col-xs-5">
 				<div class="location-infomation-image-right" style="background-image:url(<%= asset_path "location.infomation.right.jpg" %>)" />
 				</div>
-			<div class="infomation-location-post-link">
-				みんなのおすすめ場所をみてみる
+				<div class="infomation-location-post-link">
+				みんなのおすすめ場所をみる
 				<%= link_to posts_path do %>
-				<i class="fas fa-chevron-circle-right fa-second"></i>
+				<i class="fas fa-chevron-circle-right fa-post"></i>
 				<% end %>
-			</div>
+				</div>
 			
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK39Tyi_S53HaiDfjFdjEfHvGcQ4ACWs"></script> 
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK39Tyi_S53HaiDfjFdjEfHvGcQ4ACWs"></script> 
 				<div class="container">
-					<button onclick="getMyPlace()" class="btn-square-little-rich" >阿佐ヶ谷へ行く！ <i class="fas fa-chevron-circle-right fa-second"></i></button></div>
-					<div id="result"></div>
-					<div id="map" style="width:550px; height:320px; margin: 10px 0 0 -25px;"></div>
+					<button onclick="getMyPlace()" class="btn-square-little-rich" >阿佐ヶ谷へ行く！ <i class="fas fa-chevron-circle-right fa-post"></i></button>
+				</div>
+				<div id="result"></div>
+				<div id="map" class="map"></div>
 				<div class="location-infomation-time">
-				現在地から阿佐ヶ谷までの移動時間は車で
-				<span class="location-infomation-time-number"><span id="time"></span></span>
+					現在地から阿佐ヶ谷までの移動時間は車で
+					<span class="location-infomation-time-number"><span id="time"></span></span>
 				</div>
 				<script>
 				function getMyPlace() {
 					var output = document.getElementById("result");
-					if (!navigator.geolocation){//Geolocation apiがサポートされていない場合
+					if (!navigator.geolocation){
 						output.innerHTML = "<p>Geolocationはあなたのブラウザーでサポートされておりません</p>";
 					return;
 				}
