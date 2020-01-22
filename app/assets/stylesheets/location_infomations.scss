@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.map {
+	width: 550px; 
+	height: 320px; 
+	margin: 20px 0 0 -30px;
+}
+
 .btn-square-little-rich {
 	padding: 0.3em 1em;
 	text-decoration: none;
@@ -23,16 +29,16 @@
 
 .location-infomation-image-left {
 	background: image-url("location.infomation.left.jpg");
-	width:350px;
-	height:350px;
+	width: 350px;
+	height: 350px;
 	background-size: cover;
 	margin-left: 80px;
 }
 
 .location-infomation-image-right {
 	background: image-url("location.infomation.right.jpg");
-	width:400px;
-	height:250px;
+	width: 400px;
+	height: 250px;
 	background-size: cover;
 	margin: 20px 0 0 -30px;
 }
@@ -44,9 +50,7 @@
 	line-height: 1.6em;
 	letter-spacing: 2px;
 	padding: 0.5em;
-	background: #Transparent;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.23);
-	text-align: center;
 	display: inline-block;
 	text-align: left;
 	border-radius: 5px;
@@ -76,7 +80,7 @@
 }
 
 .location-infomation-head-br {
-	margin-top:200px;
+	margin-top: 200px;
 }
 
 .infomation-location-post-link {
@@ -128,4 +132,134 @@
 	font-size: 22px;
 }
 
+@media screen and (max-width: 425px) {
 
+.btn-square-little-rich {
+	padding: 0.3em 1em;
+	text-decoration: none;
+	background: #78FF94;
+	border: solid 1px #DCC2FF;
+	border-radius: 4px;
+	box-shadow: inset 0 2px 0 rgba(255,255,255,0.2);
+	text-shadow: 0 2px 0 rgba(0,0,0,0.2);
+	font-size: 1.1rem;
+	margin: 8px 0 0 -30px;
+    width: 140px;
+}
+
+.btn-square-little-rich:active {
+	border: solid 1px #03A9F4;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+.location-infomation-image-left {
+	background: image-url("location.infomation.left.jpg");
+	width: 110px;
+	height: 150px;
+	background-size: cover;
+	margin: 20px 0 0 20px;
+}
+
+.location-infomation-image-right {
+	background: image-url("location.infomation.right.jpg");
+	width: 140px;
+    height: 90px;
+    background-size: cover;
+    margin: 10px 0 0 -17px;
+}
+
+.location-infomation-text {
+	margin: 100px 0 0 20px;
+	font-size: 0.1rem;
+	padding-left: 30px;
+	line-height: 1.6rem;
+	padding: 0.5rem;
+	text-align: left;
+}
+
+.location-infomation-head {
+	-ms-writing-mode: tb-rl;
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	font-size: 1.5rem;
+	letter-spacing: 2px;
+	height: 30%;
+	padding: 3px 5px;
+	border-left: solid 2px #00F9A9;
+	border-right: solid 2px #00F9A9;
+	margin-left: -10px;
+}
+
+.location-infomation-head-line {
+	border-right: solid 20px white;
+	height: 30px;
+}
+
+.location-infomation-head-line-second {
+	border-left: solid 20px white;
+	height: 30px;
+}
+
+.location-infomation-head-br {
+	margin-top: 120px;
+}
+
+.infomation-location-post-link {
+	font-size: 1rem;
+	margin: 10px 0 0 -17px;
+}
+
+.location-infomation-head-T {
+	text-combine-upright: all;
+	text-orientation: sideways;
+	position: relative;
+	left: 0.3em;
+	font-size: 1em;
+	margin-bottom: 3px;
+	padding-left: -10px;
+}
+
+.location-infomation-time {
+	font-size: 1rem;
+	margin: 15px 0 0 -25px;
+	padding-left: 25px;
+	margin-bottom: 50px;
+}
+
+.location-infomation-time:before {
+	position: absolute;
+	content: '';
+	bottom: -3px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border: none;
+	border-left: solid 15px transparent;
+	border-bottom: solid 15px #FFA07A;
+}
+
+.location-infomation-time:after {
+	position: absolute;
+	content: '';
+	bottom: -3px;
+	left: 10px;
+	width: 100%;
+	border-bottom: solid 3px #FFA07A;
+}
+
+.location-infomation-time-number {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.fa-post {
+	color: black;
+}
+
+.map {
+	width: 150px!important; 
+	height: 200px!important; 
+	margin: 20px 0 0 -15px;
+}
+}

@@ -10,7 +10,7 @@
 	font-weight: 500;
 	text-align: right;
 	float: right;
-	font-size: 45px;
+	font-size: 4.5rem;
 	letter-spacing: 30px;
 	margin: 35px 40px 0 0;
 }
@@ -22,7 +22,7 @@
 	color: block;
 	font-weight: 100;
 	float: right;
-	font-size: 40px;
+	font-size: 4rem;
 	letter-spacing: 25px;
 	margin: 35px 40px 0 0;
 }
@@ -34,7 +34,7 @@
 	color: white;
 	font-weight: 100;
 	float: right;
-	font-size: 40px;
+	font-size: 4rem;
 	letter-spacing: 25px;
 	margin: 35px 40px 0 0;
 }
@@ -82,7 +82,7 @@
 	text-orientation: upright;
 	color: white;
 	float: right;
-	font-size: 22px;
+	font-size: 2.2rem;
 	font-weight: 200;
 	margin: 260px 30px 0 0;
 	line-height: 2em;
@@ -96,7 +96,7 @@
 	text-orientation: upright;
 	color:black;
 	float:right;
-	font-size: 22px;
+	font-size: 2.2rem;
 	font-weight: 200;
 	margin: 260px 30px 0 0;
 	line-height: 2em;
@@ -110,7 +110,7 @@
 	text-orientation: upright;
 	color: white;
 	float: right;
-	font-size: 22px;
+	font-size: 2.2rem;
 	font-weight: 200;
 	margin: 280px 30px 0 0;
 	line-height: 2em;
@@ -132,14 +132,15 @@
 	transform: scale(1.7,1);
 }
 
-@media screen and (max-width:1024px) {  
+@media screen and (max-width: 1024px) {
+
 .home-text {
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
 	color: white;
 	float: right;
-	font-size: 22px;
+	font-size: 2.2rem;
 	font-weight: 200;
 	margin: 140px 30px 0 0;
 	line-height: 2em;
@@ -161,7 +162,7 @@
 	writing-mode: vertical-rl;
 	text-orientation: upright;
 	color: black;
-	font-size: 22px;
+	font-size: 2.2rem;
 	font-weight: 200;
 	margin: -300px 110px 0 0;
 	line-height: 2em;
@@ -170,14 +171,15 @@
 }
 }
 
-@media screen and (max-width:768px) {  
+@media screen and (max-width: 768px) {
+
 .home-text {
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
 	color: white;
 	float: right;
-	font-size: 22px;
+	font-size: 2.2rem;
 	font-weight: 200;
 	margin: 140px 30px 0 0;
 	line-height: 2em;
@@ -199,7 +201,7 @@
 	writing-mode: vertical-rl;
 	text-orientation: upright;
 	color: black;
-	font-size: 22px;
+	font-size: 2.2rem;
 	font-weight: 200;
 	margin: -300px 110px 0 0;
 	line-height: 2em;
@@ -208,7 +210,8 @@
 }
 }
 
-@media screen and (max-width:425px) {  
+@media screen and (max-width: 425px) {
+
 .home-about{
 	width: 100%;
 	height: 600px;
@@ -219,12 +222,12 @@
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:white;
+	color: white;
 	font-weight: 500;
-	text-align:right;
-	float:right;
-	font-size:40px;
-	letter-spacing:17px;
+	text-align: right;
+	float: right;
+	font-size: 4rem;
+	letter-spacing: 17px;
 	margin: 10px 35px 0 0;
 }
 	
@@ -232,22 +235,22 @@
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:white;
-	float:right;
-	font-size:22px;
+	color: white;
+	float: right;
+	font-size: 2.2rem;
 	font-weight: 500;
 	margin: 80px 50px 0 0;
 	line-height: 2.2em;
 	text-decoration: none;
-	letter-spacing:3px;
+	letter-spacing: 3px;
 }
 	
 .home-post-image{
 	background: image-url("top2.jpg");
-	width:100%;
-	height:550px;
+	width: 100%;
+	height: 550px;
 	background-size: 700px 667px;
-	margin-top:40px;
+	margin-top: 40px;
 	margin-bottom: 40px;
 }
 	
@@ -258,7 +261,7 @@
 	color: white;
 	font-weight: 500;
 	float: right;
-	font-size: 40px;
+	font-size: 4rem;
 	letter-spacing: 25px;
 	margin: -440px 30px 0 0;
 }
@@ -267,8 +270,8 @@
 	-ms-writing-mode: tb-rl;
 	writing-mode: vertical-rl;
 	text-orientation: upright;
-	color:white;
-	font-size: 22px;
+	color: white;
+	font-size: 2.2rem;
 	font-weight: 500;
 	line-height: 2.2em;
 	text-decoration: none;
@@ -315,7 +318,7 @@
 	writing-mode: vertical-rl;
 	text-orientation: upright;
 	color: white;
-	font-size: 22px;
+	font-size: 2.2rem;
 	font-weight: 500;
 	margin: 190px 35px 0 55px;
 	line-height: 2.2em;
