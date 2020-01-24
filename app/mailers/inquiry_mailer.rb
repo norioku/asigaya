@@ -5,7 +5,7 @@ class InquiryMailer < ApplicationMailer
 		mail(
 		subject: "【あしたは阿佐ヶ谷】お問い合わせ回答",
 		to: inquiry.email,
-		from: "fuzisi.okano184@gmail.com"
+		from: ENV['Email_name']
 		)
 	end
 end
