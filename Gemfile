@@ -67,7 +67,7 @@ group :production do
 	gem 'mysql2'
 end
 
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.2.1'
 
 gem 'bootstrap-sass', '~> 3.4.1'
 
